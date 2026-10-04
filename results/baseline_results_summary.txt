@@ -1,0 +1,8 @@
+Provider: demo
+Cases: 20
+Patch compile success: 17/20 (85.0%)
+Functional test success: 1/20 (5.0%)
+Average response time: 0.000 s
+Syntax test success: 1/4
+Logic test success: 0/14
+Runtime test success: 0/2

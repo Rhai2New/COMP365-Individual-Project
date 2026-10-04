@@ -1,4 +1,4 @@
 source,working_link,project_use,current_checkpoint_status,target_amount
-QuixBugs,https://github.com/jkoppel/QuixBugs,Compact benchmark bugs and tests,Public access confirmed; repository download script included,40 Java benchmark problems available in source repository
-Defects4J,https://github.com/rjust/defects4j,Small isolated Java methods from reproducible real-world bugs,Public access confirmed; repository download script included,Supplement QuixBugs to reach approximately 50-100 total project samples
-Local smoke tests,project samples folder,Verify compiler capture patch formatting diff and recompilation,2 runnable files included,2 checkpoint smoke tests only
+Checkpoint 2 curated Java micro-benchmark,benchmarks/manifest.csv,Same-case baseline-vs-LLM comparison with compiler/runtime/test feedback,20 runnable cases included and used for Checkpoint 2,20 cases
+QuixBugs,https://github.com/jkoppel/QuixBugs,Planned public algorithmic benchmark expansion for final evaluation,Public access confirmed; related work reviewed,40 Java benchmark problems available in source repository
+Defects4J,https://github.com/rjust/defects4j,Planned real-world Java bug expansion for final evaluation,Public access confirmed; related work reviewed,Use selected isolated methods/tests for final project

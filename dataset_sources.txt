@@ -1,12 +1,9 @@
-Checkpoint dataset sources from the approved proposal:
+Checkpoint 2 executed benchmark:
+- 20 self-authored Java micro-benchmark cases in benchmarks/
+- Every case includes black-box expected-output tests in benchmarks/manifest.json
 
-QuixBugs
-https://github.com/jkoppel/QuixBugs
+Planned public benchmark expansion:
+- QuixBugs: https://github.com/jkoppel/QuixBugs
+- Defects4J: https://github.com/rjust/defects4j
 
-Defects4J
-https://github.com/rjust/defects4j
-
-Planned project dataset:
-- 50-100 isolated Java/C++ buggy methods/programs
-- source files kept under approximately 100 lines when possible
-- paired with compiler/runtime errors and/or benchmark tests
+Related work notes are in RELATED_WORKS.md.

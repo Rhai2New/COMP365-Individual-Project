@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""COMP 365 Checkpoint 1 prototype: Interactive Code Bug Explainer & Patch Generator.
+"""COMP 365 Individual Project: Interactive Code Bug Explainer & Patch Generator.
 
-The program accepts a small Java or C++ source file, captures its compiler error,
-then generates a beginner-friendly explanation and localized patch.
+Checkpoint 2 version.
 
-Providers:
-  demo   - local deterministic fallback for the included sample; no API key needed.
-  openai - sends the source + compiler error to the OpenAI Responses API.
+The module supports two repair providers:
+  demo   - a deliberately small local rule-based baseline.
+  openai - the project LLM repair method using the OpenAI Responses API.
+
+The failure context may be a compiler error, runtime failure, or failed test output.
+Checkpoint 2 evaluates compilation success and functional test success separately.
 """
 
 from __future__ import annotations
@@ -23,9 +25,12 @@ import time
 from pathlib import Path
 
 SYSTEM_INSTRUCTIONS = """You are a debugging assistant for an introductory programming course.
-Analyze only the supplied Java or C++ program and compiler/runtime error.
-Use beginner-friendly concepts. Do not redesign the whole program, introduce advanced
-patterns, or change unrelated lines. Return a minimal fix.
+Analyze only the supplied Java or C++ program and the supplied failure context.
+The failure context may be a compiler error, runtime error, or failed black-box test.
+Use beginner-friendly concepts and make the smallest general repair that fixes the underlying bug.
+Do not redesign the whole program, add unrelated features, hardcode the provided expected outputs,
+or introduce advanced patterns when a simple introductory fix is available.
+Preserve the program's input/output behavior except for correcting the bug.
 
 Return EXACTLY these sections:
 ROOT CAUSE:
@@ -55,7 +60,6 @@ def compiler_available(language: str) -> bool:
 
 
 def compile_source(source_path: Path, language: str) -> tuple[bool, str]:
-    """Compile a source file in a temporary directory and return (success, output)."""
     if not compiler_available(language):
         compiler = "javac" if language == "java" else "g++"
         return False, f"Compiler '{compiler}' was not found on PATH."
@@ -78,14 +82,11 @@ def compile_source(source_path: Path, language: str) -> tuple[bool, str]:
             stderr=subprocess.STDOUT,
             timeout=20,
         )
-        output = proc.stdout.strip()
-        if not output:
-            output = "Compilation succeeded with no compiler messages."
+        output = proc.stdout.strip() or "Compilation succeeded with no compiler messages."
         return proc.returncode == 0, output
 
 
 def compile_text(source_text: str, filename: str, language: str) -> tuple[bool, str]:
-    """Compile source text while preserving the original filename (important for Java public classes)."""
     if not compiler_available(language):
         compiler = "javac" if language == "java" else "g++"
         return False, f"Compiler '{compiler}' was not found on PATH."
@@ -99,8 +100,12 @@ def compile_text(source_text: str, filename: str, language: str) -> tuple[bool, 
         else:
             command = ["g++", "-std=c++17", test_file.name, "-o", "program"]
         proc = subprocess.run(
-            command, cwd=build_dir, text=True, stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT, timeout=20
+            command,
+            cwd=build_dir,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=20,
         )
         output = proc.stdout.strip() or "Compilation succeeded with no compiler messages."
         return proc.returncode == 0, output
@@ -117,18 +122,17 @@ def make_diff(original: str, patched: str, filename: str) -> str:
     ).rstrip()
 
 
-def demo_response(source: str, language: str, compiler_error: str) -> str:
-    """Small local fallback used only so the checkpoint artifact can be tested offline."""
+def demo_response(source: str, language: str, failure_context: str) -> str:
+    """Small local baseline. Intentionally narrow so it is a meaningful comparison."""
     patched = source
-    root = "The compiler found a syntax error near a statement that is missing its terminator."
+    root = "The local rule-based baseline could not identify this bug with its small rule set."
     explanation = (
-        "In Java and C++, many statements end with a semicolon. The compiler reaches the end "
-        "of the statement and cannot tell that the instruction is finished. Add the missing "
-        "semicolon without changing the rest of the program."
+        "This baseline only contains a few hand-written syntax rules. It leaves the program "
+        "unchanged when none of those rules match."
     )
 
-    # Included Java sample: add a semicolon to a println line when javac says ';' expected.
-    if language == "java" and "';' expected" in compiler_error:
+    # Java missing semicolon rule.
+    if language == "java" and "';' expected" in failure_context:
         lines = source.splitlines()
         for i, line in enumerate(lines):
             stripped = line.strip()
@@ -136,26 +140,29 @@ def demo_response(source: str, language: str, compiler_error: str) -> str:
                 stripped
                 and not stripped.startswith("//")
                 and not stripped.endswith((";", "{", "}"))
-                and re.search(r"\b(System\.out\.(print|println)|return|[A-Za-z_][\w<>\[\]]*\s+\w+\s*=)", stripped)
+                and re.search(
+                    r"\b(System\.out\.(print|println)|return|[A-Za-z_][\w<>\[\]]*\s+\w+\s*=)",
+                    stripped,
+                )
             ):
                 lines[i] = line.rstrip() + ";"
+                root = "The statement is missing its terminating semicolon."
+                explanation = "Java statements such as this one normally end with a semicolon."
                 break
         patched = "\n".join(lines) + ("\n" if source.endswith("\n") else "")
-    elif language == "cpp" and "expected" in compiler_error:
+
+    # C++ missing semicolon fallback retained from Checkpoint 1.
+    elif language == "cpp" and "expected" in failure_context:
         lines = source.splitlines()
         for i, line in enumerate(lines):
             stripped = line.strip()
             if stripped and not stripped.startswith("//") and not stripped.endswith((";", "{", "}")):
                 if "cout" in stripped or "return" in stripped or "=" in stripped:
                     lines[i] = line.rstrip() + ";"
+                    root = "A statement appears to be missing its terminating semicolon."
+                    explanation = "The baseline added a semicolon to the first matching statement."
                     break
         patched = "\n".join(lines) + ("\n" if source.endswith("\n") else "")
-    else:
-        root = "Demo mode could not identify this error with its intentionally small rule set."
-        explanation = (
-            "Use --provider openai for general Java/C++ debugging. Demo mode is only a local "
-            "checkpoint fallback and is not the project's AI/ML component."
-        )
 
     fence = "java" if language == "java" else "cpp"
     return (
@@ -165,24 +172,20 @@ def demo_response(source: str, language: str, compiler_error: str) -> str:
     )
 
 
-def openai_response(source: str, language: str, compiler_error: str, model: str) -> str:
+def openai_response(source: str, language: str, failure_context: str, model: str) -> str:
     try:
         from openai import OpenAI
     except ImportError as exc:
-        raise RuntimeError(
-            "The OpenAI package is not installed. Run: py -m pip install -r requirements.txt"
-        ) from exc
+        raise RuntimeError("OpenAI package missing. Run: python -m pip install -r requirements.txt") from exc
 
     if not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError(
-            "OPENAI_API_KEY is not set. Set it in your terminal, then run the live test again."
-        )
+        raise RuntimeError("OPENAI_API_KEY is not set in this terminal.")
 
     client = OpenAI()
     user_input = f"""LANGUAGE: {language}
 
-COMPILER/RUNTIME ERROR:
-{compiler_error}
+FAILURE CONTEXT:
+{failure_context}
 
 SOURCE CODE:
 ```{language}
@@ -206,31 +209,13 @@ def extract_patched_code(response_text: str) -> str | None:
     return match.group(1).strip() + "\n" if match else None
 
 
-def print_block(title: str, text: str) -> None:
-    width = 72
-    print("=" * width)
-    print(title)
-    print("=" * width)
-    print(text.rstrip())
-    print()
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser(description="COMP 365 code bug explainer checkpoint prototype")
-    parser.add_argument("--source", required=True, help="Path to a .java or .cpp source file")
-    parser.add_argument(
-        "--provider",
-        choices=["demo", "openai"],
-        default="demo",
-        help="demo runs offline; openai performs the live LLM API call",
-    )
-    parser.add_argument(
-        "--model",
-        default="gpt-5.6-luna",
-        help="OpenAI model used when --provider openai is selected",
-    )
-    parser.add_argument("--error-file", help="Optional text file containing a runtime/compiler error")
-    parser.add_argument("--save-output", help="Optional path to save the full console report")
+    parser = argparse.ArgumentParser(description="COMP 365 code bug explainer")
+    parser.add_argument("--source", required=True)
+    parser.add_argument("--provider", choices=["demo", "openai"], default="demo")
+    parser.add_argument("--model", default="gpt-5.6-luna")
+    parser.add_argument("--error-file", help="Optional compiler/runtime/test failure text file")
+    parser.add_argument("--save-output")
     args = parser.parse_args()
 
     source_path = Path(args.source).resolve()
@@ -238,41 +223,36 @@ def main() -> int:
         print(f"ERROR: Source file not found: {source_path}", file=sys.stderr)
         return 2
 
-    try:
-        language = detect_language(source_path)
-    except ValueError as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
-        return 2
-
+    language = detect_language(source_path)
     source = source_path.read_text(encoding="utf-8")
 
     if args.error_file:
-        compiler_error = Path(args.error_file).read_text(encoding="utf-8").strip()
-        compile_ok = False
+        failure_context = Path(args.error_file).read_text(encoding="utf-8").strip()
+        original_compile_ok = None
     else:
-        compile_ok, compiler_error = compile_source(source_path, language)
-
-    if compile_ok and not args.error_file:
-        print("The source already compiles. Supply --error-file for a runtime/logic-error test.")
-        return 1
+        original_compile_ok, failure_context = compile_source(source_path, language)
+        if original_compile_ok:
+            print("The source compiles. For a logic bug, pass a test failure using --error-file.")
+            return 1
 
     start = time.perf_counter()
     try:
         if args.provider == "openai":
-            response_text = openai_response(source, language, compiler_error, args.model)
+            response_text = openai_response(source, language, failure_context, args.model)
             provider_label = f"OpenAI Responses API ({args.model})"
         else:
-            response_text = demo_response(source, language, compiler_error)
-            provider_label = "Local demo fallback (no API call)"
+            response_text = demo_response(source, language, failure_context)
+            provider_label = "Local rule-based demo baseline"
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 3
     latency = time.perf_counter() - start
 
     patched = extract_patched_code(response_text)
-    verify_text = "No patched code block could be extracted for verification."
-    patch_file = None
-    if patched is not None:
+    if patched is None:
+        verify_text = "No patched code block could be extracted for verification."
+        diff = "No diff available."
+    else:
         patch_file = source_path.with_name(source_path.stem + "_patched" + source_path.suffix)
         patch_file.write_text(patched, encoding="utf-8")
         verify_ok, verify_output = compile_text(patched, source_path.name, language)
@@ -281,15 +261,14 @@ def main() -> int:
             f"Compilation check: {'PASS' if verify_ok else 'FAIL'}\n"
             f"Compiler output: {verify_output}"
         )
-
-    diff = make_diff(source, patched, source_path.name) if patched else "No diff available."
+        diff = make_diff(source, patched, source_path.name)
 
     report_parts = [
-        ("CHECKPOINT 1 - INTERACTIVE CODE BUG EXPLAINER & PATCH GENERATOR", f"Provider: {provider_label}\nSource: {source_path.name}\nLanguage: {language}\nResponse latency: {latency:.3f} seconds"),
-        ("ORIGINAL COMPILER / RUNTIME ERROR", compiler_error),
+        ("COMP 365 - INTERACTIVE CODE BUG EXPLAINER & PATCH GENERATOR", f"Provider: {provider_label}\nSource: {source_path.name}\nLanguage: {language}\nResponse latency: {latency:.3f} seconds"),
+        ("FAILURE CONTEXT", failure_context),
         ("PATCH ENGINE OUTPUT", response_text),
         ("LOCALIZED DIFF", diff),
-        ("PATCH VERIFICATION", verify_text),
+        ("PATCH COMPILATION VERIFICATION", verify_text),
     ]
 
     full_report = ""
@@ -303,7 +282,6 @@ def main() -> int:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(full_report, encoding="utf-8")
         print(f"Saved report to: {output_path.resolve()}")
-
     return 0
 
 

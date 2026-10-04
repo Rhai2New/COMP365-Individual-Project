@@ -1,0 +1,21 @@
+case_id,language,bug_type,difficulty,title,source,origin,test_count
+J01,java,syntax:semicolon,easy,Missing semicolon,J01.java,Curated COMP 365 micro-benchmark case,1
+J02,java,syntax:missing_parenthesis,easy,Missing closing parenthesis,J02.java,Curated COMP 365 micro-benchmark case,1
+J03,java,syntax:missing_brace,easy,Missing closing brace,J03.java,Curated COMP 365 micro-benchmark case,1
+J04,java,syntax:wrong_assignment,easy,Uses comparison operator in declaration,J04.java,Curated COMP 365 micro-benchmark case,1
+J05,java,logic:wrong_operator,easy,Addition implemented as subtraction,J05.java,Curated COMP 365 micro-benchmark case,2
+J06,java,logic:off_by_one,medium,Loop excludes final value,J06.java,Curated COMP 365 micro-benchmark case,2
+J07,java,logic:wrong_comparison,easy,Maximum comparison reversed,J07.java,Curated COMP 365 micro-benchmark case,2
+J08,java,logic:parity_reversed,easy,Even and odd outputs reversed,J08.java,Curated COMP 365 micro-benchmark case,2
+J09,java,logic:integer_division,medium,Integer division loses decimal,J09.java,Curated COMP 365 micro-benchmark case,2
+J10,java,logic:string_equality,medium,String comparison uses reference equality,J10.java,Curated COMP 365 micro-benchmark case,2
+J11,java,logic:boolean_operator,medium,Impossible range check uses AND,J11.java,Curated COMP 365 micro-benchmark case,3
+J12,java,runtime:array_bound,medium,Array loop goes one index too far,J12.java,Curated COMP 365 micro-benchmark case,1
+J13,java,logic:max_initialization,medium,Maximum initialized incorrectly for negatives,J13.java,Curated COMP 365 micro-benchmark case,2
+J14,java,logic:area_formula,easy,Rectangle area uses addition,J14.java,Curated COMP 365 micro-benchmark case,2
+J15,java,logic:counter_update,medium,Counter decrements instead of increments,J15.java,Curated COMP 365 micro-benchmark case,2
+J16,java,logic:wrong_accumulator,medium,Product accumulator uses addition,J16.java,Curated COMP 365 micro-benchmark case,2
+J17,java,logic:boundary_condition,medium,Passing boundary excludes exact cutoff,J17.java,Curated COMP 365 micro-benchmark case,2
+J18,java,logic:swap_assignment,medium,Swap overwrites saved value,J18.java,Curated COMP 365 micro-benchmark case,2
+J19,java,logic:minimum_comparison,medium,Minimum comparison reversed,J19.java,Curated COMP 365 micro-benchmark case,2
+J20,java,runtime:division_by_zero,medium,Division happens before zero check,J20.java,Curated COMP 365 micro-benchmark case,2

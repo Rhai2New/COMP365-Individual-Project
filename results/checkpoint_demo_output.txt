@@ -4,7 +4,7 @@ CHECKPOINT 1 - INTERACTIVE CODE BUG EXPLAINER & PATCH GENERATOR
 Provider: Local demo fallback (no API call)
 Source: BuggyGreeting.java
 Language: java
-Response latency: 0.000 seconds
+Response latency: 0.001 seconds
 
 ========================================================================
 ORIGINAL COMPILER / RUNTIME ERROR

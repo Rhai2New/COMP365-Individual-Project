@@ -1,6 +1,11 @@
 .venv/
 __pycache__/
+*.pyc
 .idea/
 .env
-*.pyc
 *.class
+*.exe
+*.out
+benchmarks/**/*_patched.java
+samples/*_patched.java
+results/*.tmp
