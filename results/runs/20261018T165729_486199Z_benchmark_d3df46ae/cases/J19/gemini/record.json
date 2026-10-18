@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T165729_486199Z_benchmark_d3df46ae",
+  "case_id": "J19",
+  "source": "J19.java",
+  "language": "java",
+  "bug_type": "logic:minimum_comparison",
+  "category": "logic",
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "resolved_model": null,
+  "status": "skipped_after_api_error",
+  "request_made": false,
+  "response_received": false,
+  "repair_attempted": false,
+  "patch_changed_source": null,
+  "patch_compile_success": null,
+  "visible_test_success": null,
+  "hidden_test_success": null,
+  "test_success": null,
+  "response_seconds": null,
+  "error": "Circuit breaker: no request after api_access_error in 20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "artifact_dir": "cases/J19/gemini"
+}

@@ -1,0 +1,13 @@
+{
+  "primary_run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+  "control_validation": "results/validation/20261018T153645_076776Z_benchmark_controls_4a91c6df/summary.json",
+  "verification": "results/verification/20261018T155325_533888Z_final_checks_0b6c23aa/verification.json",
+  "explanation_ratings": "results/explanation_reviews/20261018T132222_582045Z_scored_f320519e/summary.json",
+  "historical_audit": "results/historical_audits/20261018T131533_028957Z_csv_inventory_cfdd9606/summary.json",
+  "gemini_run": "results/runs/20261018T153859_032470Z_benchmark_60bcc2f4",
+  "comparison": "results/comparisons/20261018T154343_232420Z_final_328a03d4",
+  "replay": "results/replays/20261018T154132_042412Z_saved_patches_1b91c667/summary.json",
+  "human_worksheet": "results/explanation_reviews/20261018T154535_622694Z_worksheet_704dd1d7/ratings.csv",
+  "gemini_access": "results/api_preflight/20261018T153628_997812Z_gemini_metadata_5f7d6d26/preflight.json",
+  "git_preparation": "audit/20261018T154603_945210Z_git_preparation_b7c4855b"
+}

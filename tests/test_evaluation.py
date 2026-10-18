@@ -68,6 +68,13 @@ class EvaluationTests(unittest.TestCase):
             error.status_code = code
             self.assertEqual(expected, classify_exception(error).status)
 
+    def test_control_characters_in_credential_block_before_network(self):
+        from repair_providers import preflight
+        with patch.dict('os.environ', {'GEMINI_API_KEY': 'mock\ninvalid-header-value'}):
+            result = preflight('gemini', 'test-model')
+        self.assertFalse(result['available'])
+        self.assertIn('control characters', result['reason'])
+
     def test_client_setup_failure_is_not_a_submitted_request(self):
         prompt = make_prompt('class X {}', 'java', 'failure')
         with patch('repair_providers.preflight', return_value={'available': True}), \
@@ -193,6 +200,27 @@ class EvaluationTests(unittest.TestCase):
             row = read_records(next(Path(td).iterdir()))[0]
             self.assertFalse(row['request_made'])
             self.assertIn('billing tier unverified', row['error'])
+
+    def test_failed_smoke_can_record_skips_without_network(self):
+        with tempfile.TemporaryDirectory() as td:
+            smoke_root = Path(td) / 'smoke'
+            args = ['benchmark_runner.py', '--providers', 'gemini', '--case', 'J01',
+                    '--allow-live', '--gemini-free-tier-confirmed', '--results-root', str(smoke_root)]
+            error = ProviderError('api_access_error', 'mock access error', request_made=True, http_status=400)
+            with patch('sys.argv', args), patch('benchmark_runner.preflight', return_value={'available': True}), \
+                 patch('benchmark_runner.generate', side_effect=error):
+                runner.main()
+            smoke = next(smoke_root.iterdir())
+            skip_root = Path(td) / 'skips'
+            args = ['benchmark_runner.py', '--providers', 'gemini', '--case', 'J02',
+                    '--blocked-by-run', str(smoke), '--results-root', str(skip_root)]
+            with patch('sys.argv', args), patch('benchmark_runner.generate') as generate_mock:
+                runner.main()
+            generate_mock.assert_not_called()
+            row = read_records(next(skip_root.iterdir()))[0]
+            self.assertEqual('skipped_after_api_error', row['status'])
+            self.assertFalse(row['request_made'])
+            self.assertIn(smoke.name, row['error'])
 
 
 if __name__ == '__main__':

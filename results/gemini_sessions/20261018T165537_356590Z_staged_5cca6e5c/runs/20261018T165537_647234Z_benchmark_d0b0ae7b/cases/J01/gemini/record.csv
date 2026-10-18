@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T165537_647234Z_benchmark_d0b0ae7b,J01,J01.java,java,syntax:semicolon,syntax,gemini,gemini-3.8-flash,,api_access_error,True,False,False,,,,,,2.0816438000183553,"400 Bad Request. {'message': '<html><title>Error 400 (Bad Request)!!1</title></html>', 'status': 'Bad Request'}",cases/J01/gemini

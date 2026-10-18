@@ -1,0 +1,31 @@
+{
+  "model": "gemini-3.8-flash",
+  "free_tier_attested": true,
+  "automatic_retries": 0,
+  "smoke_response_delivered": false,
+  "runs": [
+    "results\\gemini_sessions\\20261018T165537_356590Z_staged_5cca6e5c\\runs\\20261018T165537_647234Z_benchmark_d0b0ae7b"
+  ],
+  "not_evaluated": [
+    "J02",
+    "J03",
+    "J04",
+    "J05",
+    "J06",
+    "J07",
+    "J08",
+    "J09",
+    "J10",
+    "J11",
+    "J12",
+    "J13",
+    "J14",
+    "J15",
+    "J16",
+    "J17",
+    "J18",
+    "J19",
+    "J20"
+  ],
+  "reason": "Smoke request did not return a response; no additional requests authorized by this helper"
+}

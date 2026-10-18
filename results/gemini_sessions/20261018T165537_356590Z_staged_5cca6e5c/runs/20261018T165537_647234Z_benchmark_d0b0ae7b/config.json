@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "run_id": "20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "started_utc": "2026-10-18T16:55:37.648233+00:00",
+  "providers": [
+    "gemini"
+  ],
+  "models": {
+    "gemini": "gemini-3.8-flash"
+  },
+  "case_ids": [
+    "J01"
+  ],
+  "preflight": {
+    "gemini": {
+      "available": true,
+      "reason": "Credentials present; quota/access unverified"
+    }
+  },
+  "allow_live": true,
+  "max_cloud_requests": 1,
+  "gemini_free_tier_confirmed": true,
+  "gemini_min_interval_seconds": 65.0,
+  "max_output_tokens": 2048,
+  "request_timeout_seconds": 120.0,
+  "retries": 0,
+  "environment": {
+    "python": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
+    "python_executable": "C:\\NCAT\\COMP365_Checkpoint2_Project\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "openai": "2.54.0",
+      "google-genai": "2.31.0"
+    },
+    "java": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"23.0.1\" 2024-10-15\nOpenJDK Runtime Environment (build 23.0.1+11-39)\nOpenJDK 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-version"
+      ],
+      "seconds": 0.12100649997591972
+    },
+    "javac": {
+      "returncode": 0,
+      "stdout": "javac 23.0.1\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "javac",
+        "-version"
+      ],
+      "seconds": 0.21729890001006424
+    },
+    "java_path": "C:\\Users\\rhyne\\.jdks\\openjdk-23.0.1\\bin\\java.EXE",
+    "javac_path": "C:\\Users\\rhyne\\.jdks\\openjdk-23.0.1\\bin\\javac.EXE"
+  },
+  "generation_settings": {
+    "gemini": {
+      "temperature": 0
+    },
+    "openai": {
+      "sampling": "provider default (model-dependent)"
+    },
+    "llama_cpp": {
+      "temperature": 0,
+      "seed": 365,
+      "cache_prompt": false
+    },
+    "ollama": {
+      "temperature": 0,
+      "seed": 365
+    }
+  },
+  "legacy_output_hint": null,
+  "purpose": "live_or_local_benchmark"
+}

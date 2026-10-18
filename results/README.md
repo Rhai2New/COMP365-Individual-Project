@@ -3,8 +3,9 @@
 Current paths: [docs/handoff_sources.json](../docs/handoff_sources.json).
 
 - Primary baseline/Qwen run: `runs/20261018T131412_396245Z_benchmark_41bb2533`.
-- Current Gemini limitation: `runs/20261018T153859_032470Z_benchmark_60bcc2f4` (20 billing-blocked records, zero generation requests).
-- Final comparison: `comparisons/20261018T154343_232420Z_final_328a03d4`.
+- Actual Gemini smoke: `gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b` (one HTTP 400, no response).
+- Remaining Gemini cases: `runs/20261018T165729_486199Z_benchmark_d3df46ae` (19 skipped, no requests). Earlier billing-blocked evidence is historical.
+- Final comparison: `comparisons/20261018T165842_557570Z_final_a1ed1438`.
 
 | Folder | Meaning |
 |---|---|

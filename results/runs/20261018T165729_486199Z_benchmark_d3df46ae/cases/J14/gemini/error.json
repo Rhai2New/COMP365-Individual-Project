@@ -1,0 +1,5 @@
+{
+  "status": "skipped_after_api_error",
+  "message": "Circuit breaker: no request after api_access_error in 20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "request_made": false
+}

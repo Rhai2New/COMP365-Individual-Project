@@ -1,0 +1,27 @@
+{
+  "sources": {
+    "demo": {
+      "run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+      "seal_sha256": "32a2ce981a89cfdcdd6fef340cfc8c5fb3782d3b32d7c5b116ef49a213d226a1"
+    },
+    "llama_cpp": {
+      "run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+      "seal_sha256": "32a2ce981a89cfdcdd6fef340cfc8c5fb3782d3b32d7c5b116ef49a213d226a1"
+    },
+    "gemini": {
+      "runs": [
+        {
+          "run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+          "seal_sha256": "e3a39c83011b4d019f5384ea3b7be8a0af084f16b7d7f695d9fa875b9dfc3320"
+        },
+        {
+          "run": "results/runs/20261018T165729_486199Z_benchmark_d3df46ae",
+          "seal_sha256": "88f151f40684baac924d0ac845385559e5a617298a990f2f9fdec04e3c5ad93f"
+        }
+      ]
+    }
+  },
+  "identical_source_prompt_tests_verified": true,
+  "comparison_note": "Gemini: 1 submitted requests, 0 delivered responses, 19 cases skipped. Access failures are not repair failures.",
+  "excluded": "Historical claims, authored controls, replays, UI edits, duplicate runs"
+}

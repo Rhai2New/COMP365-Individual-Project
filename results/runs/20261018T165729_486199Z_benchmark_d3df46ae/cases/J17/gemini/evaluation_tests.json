@@ -1,0 +1,32 @@
+[
+  {
+    "input": "60\n",
+    "expected": "pass",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "59\n",
+    "expected": "fail",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "61\n",
+    "expected": "pass",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "0\n",
+    "expected": "fail",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "100\n",
+    "expected": "pass",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  }
+]

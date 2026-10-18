@@ -5,8 +5,8 @@ Factual lookup material only. This is not paper prose. Write the RED/no-AI paper
 ## Evidence authority
 
 - Baseline/Qwen experiment: `results/runs/20261018T131412_396245Z_benchmark_41bb2533/`.
-- Current Gemini unavailable records: `results/runs/20261018T153859_032470Z_benchmark_60bcc2f4/`.
-- Selected comparison: [tables](results/comparisons/20261018T154343_232420Z_final_328a03d4/tables.md), [metrics CSV](results/comparisons/20261018T154343_232420Z_final_328a03d4/metrics.csv), [per-case results](results/comparisons/20261018T154343_232420Z_final_328a03d4/case_results.csv), [figure-ready data](results/comparisons/20261018T154343_232420Z_final_328a03d4/figure_ready_data.csv).
+- Actual Gemini smoke request: `results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b/`. J02-J20 skipped records: `results/runs/20261018T165729_486199Z_benchmark_d3df46ae/`. Earlier billing-blocked records remain historical.
+- Selected comparison: [tables](results/comparisons/20261018T165842_557570Z_final_a1ed1438/tables.md), [metrics CSV](results/comparisons/20261018T165842_557570Z_final_a1ed1438/metrics.csv), [per-case results](results/comparisons/20261018T165842_557570Z_final_a1ed1438/case_results.csv), [figure-ready data](results/comparisons/20261018T165842_557570Z_final_a1ed1438/figure_ready_data.csv).
 - Every case directory contains the actual prompt/source, response/envelope when one exists, extracted patch/diff when one exists, original and patched evaluation records, and matching JSON/CSV. Source seals and identical source/prompt/test checks: comparison `sources.json`.
 
 ## Overall observations
@@ -15,9 +15,9 @@ Factual lookup material only. This is not paper prose. Write the RED/no-AI paper
 |---|---|---|---|---|---|---|---:|---|
 | Rule baseline | 20/20 | 17/20 (85%) | 1/20 | 2/20 | 1/20 (5%) | 1/20 (5%) | 0 | 0.000056505 (20) |
 | Local Qwen | 20/20 | 13/13 (100%) | 9/13 | 10/13 | 9/13 (69.23%) | 9/20 (45%) | 7 | 15.431525365 (20) |
-| Gemini | N/A (0 requests) | N/A | N/A | N/A | N/A | N/A | 0 received | N/A (0) |
+| Gemini | 0/1 (access error) | N/A | N/A | N/A | N/A | N/A | 0 received | N/A (0) |
 
-Qwen compiles on 13/20 delivered responses (65%) when invalid responses stay in the denominator. Compilation and all-tests success measure different outcomes. Hidden success alone is insufficient: some patches pass hidden checks while failing visible checks. Delivered-response latency includes invalid outputs and excludes compilation/test execution. Local baseline timing is a function call, not browser response time. No Gemini generation availability rate or model repair score exists. All 20 Gemini cases, J01-J20, remain unevaluated.
+Qwen compiles on 13/20 delivered responses (65%) when invalid responses stay in the denominator. Compilation and all-tests success measure different outcomes. Hidden success alone is insufficient: some patches pass hidden checks while failing visible checks. Delivered-response latency includes invalid outputs and excludes compilation/test execution. Local baseline timing is a function call, not browser response time. Gemini delivery was 0/1 submitted requests, with one HTTP 400 access error; this single request does not establish a general service outage. Failed-request latency was 2.081643800 s (n=1), not model-response latency. J01 has no response/repair result; J02-J20 were skipped without requests. All 20 lack usable repair outcomes.
 
 ## Categories
 
@@ -42,14 +42,14 @@ Baseline test-passing case: J01. Qwen test-passing cases: J01, J02, J03, J04, J0
 | Model SHA-256 | `1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32` |
 | Local runtime | llama.cpp b11719; response fingerprint `b11719-5aeac37a3`; pinned executable hash in `local_model_provenance.json` |
 | Local request/server | Temperature 0; seed 365; 2,048 output tokens; cache reuse disabled; timeout 120 s; context 4,096; 8 CPU threads; 1 slot |
-| Gemini | Requested `gemini-3.8-flash`; actual served version unknown; configured temperature 0/output cap 2,048; no generation executed |
+| Gemini | Requested `gemini-3.8-flash`; actual served version unknown; requested temperature 0/output cap 2,048; one request failed before any model response |
 | Software | Python 3.12.1; OpenJDK/javac 23.0.1; google-genai 2.31.0; openai 2.54.0; full lock file |
 | Cases | 20 self-authored Java micro-benchmarks: 4 syntax, 14 logic, 2 runtime |
 | Tests | 36 original visible + 58 held-out = 94; all expectations verified by Python oracles and authored Java controls |
 | Prompt | `bug_explainer.py:SYSTEM_INSTRUCTIONS`; each case's exact `prompt.json`/`prompt.txt`; original source plus visible failures only |
 | Protocol | One response per case/system, no retries or iterative repair; hidden tests excluded from prompts; exact-output normalization documented in methodology |
 
-Google's [model catalogue](https://ai.google.dev/gemini-api/docs/models) confirms the public requested ID, not access for this account. The single models-metadata GET returned HTTP 400; only its status/error summary was retained, not the detailed HTTP error body. No retry or generation request followed. Saved credential presence is not proof of validity or free billing. [Billing verification](https://ai.google.dev/gemini-api/docs/billing) requires the account's project tier; [active limits](https://ai.google.dev/gemini-api/docs/rate-limits) are project-specific. No paid generation requests were made.
+Google's [model catalogue](https://ai.google.dev/gemini-api/docs/models) confirms the public requested ID, not access for this account. The single models-metadata GET returned HTTP 400; only its status/error summary was retained, not the detailed HTTP error body. In the later authorized follow-up, the user personally confirmed Free Tier with billing disabled. The staged helper submitted J01 once; it returned HTTP 400 with an HTML error and no model response. The saved value contains control characters and no recognizable Google API key could be extracted. There was no whitespace/quote, proxy, base-URL, or Vertex-mode correction to apply, and no evidence of a model-ID-specific rejection. No retry or model cycling followed. Credential validity/access remain unresolved; billing is no longer the blocker. [Billing verification](https://ai.google.dev/gemini-api/docs/billing) requires the account's project tier; [active limits](https://ai.google.dev/gemini-api/docs/rate-limits) are project-specific. No paid generation requests were made.
 
 ## Explanation evaluation
 

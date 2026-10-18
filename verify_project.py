@@ -30,7 +30,8 @@ def main() -> int:
         js = subprocess.run(['node', '--check', str(ROOT / 'web' / 'app.js')], capture_output=True, text=True)
         checks.append({'check': 'web JavaScript syntax', 'passed': js.returncode == 0})
     from summarize_results import read_records
-    runs = sorted((ROOT / "results" / "runs").iterdir())
+    runs = sorted(p.parent for p in (ROOT / 'results').rglob('completion.json')
+                  if (p.parent / 'cases').is_dir())
     for run in runs:
         if not (run / "completion.json").exists():
             checks.append({"check": "completed run " + run.name, "passed": False, "reason": "still running or interrupted"})

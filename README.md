@@ -33,17 +33,17 @@ The server binds to loopback, checks Host/Origin and JSON requests, and serves o
 |---|---|---|
 | `demo` | Unchanged `local-rule-baseline-v1` | 1/20 delivered responses passes all tests |
 | `llama_cpp` | Qwen2.5-Coder-0.5B-Instruct GGUF Q4_K_M | 9/20 passes all tests; 7 invalid outputs |
-| `gemini` | Requested `gemini-3.8-flash`; served version unknown | No generation requests; all 20 unevaluated |
+| `gemini` | Requested `gemini-3.8-flash`; served version unknown | J01 HTTP 400; no response; J02-J20 skipped |
 | `openai`, `ollama` | Preserved optional adapters | Not evaluated |
 
-Evidence paths: [docs/handoff_sources.json](docs/handoff_sources.json). One Google models-metadata GET returned HTTP 400, without retry. The Windows user key is accessible but billing unverified. These are access limitations, not Gemini repair failures. The requested ID appears in [Google's model catalogue](https://ai.google.dev/gemini-api/docs/models); this does not prove account access or served version.
+Evidence paths: [docs/handoff_sources.json](docs/handoff_sources.json). One Google models-metadata GET returned HTTP 400, without retry. The user has personally confirmed Free Tier with billing disabled. The staged J01 generation attempt returned HTTP 400 with no model response; the saved credential contains control characters and needs private correction. J02-J20 were skipped without requests. These are access limitations, not Gemini repair failures. The requested ID appears in [Google's model catalogue](https://ai.google.dev/gemini-api/docs/models); this does not prove account access or served version.
 
 ## Reproduce saved evidence without model calls
 
 ```powershell
 .\.venv\Scripts\python.exe summarize_results.py results\runs\20261018T131412_396245Z_benchmark_41bb2533 --check
 .\.venv\Scripts\python.exe replay_evidence.py results\runs\20261018T131412_396245Z_benchmark_41bb2533
-.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T154343_232420Z_final_328a03d4
+.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T165842_557570Z_final_a1ed1438
 .\.venv\Scripts\python.exe finalize_results.py
 ```
 
@@ -69,7 +69,7 @@ Only after resolving access and verifying those conditions:
 .\.venv\Scripts\python.exe run_gemini_evaluation.py --model gemini-3.8-flash --free-tier-confirmed
 ```
 
-The helper sends one J01 request first and the remaining 19 only after a delivered smoke response. Evidence goes under `results/gemini_sessions/`. It spaces starts by at least 65 seconds, disables retries/fallback, and stops further calls after API/quota failure. Spacing does not guarantee available project quota. Do not run with uncertain or paid billing, or repeatedly retry a failed request. Reconcile any new observations and rebuild the ZIP before reporting them.
+The helper sends one J01 request first and the remaining 19 only after a delivered smoke response. Evidence goes under `results/gemini_sessions/`. It spaces starts by at least 65 seconds, disables retries/fallback, and stops further calls after API/quota failure. Spacing does not guarantee available project quota. Do not run with uncertain or paid billing, or repeatedly retry a failed request. Failed smoke sessions now also save explicit skipped-case evidence linked to the failed run, without making further network requests. Comparisons accept repeated `--gemini RUN` arguments to combine smoke and remaining-case shards. Reconcile any new observations and rebuild the ZIP before reporting them.
 
 The underlying runner requires `--allow-live` and `--gemini-free-tier-confirmed`, with a default cap of one cloud request. Interactive Gemini requires both flags. Optional OpenAI requires an explicit model, uses Responses with `store=False`, output cap/timeout and `max_retries=0`, and was not called. Ollama requires a local endpoint and exact installed tag.
 

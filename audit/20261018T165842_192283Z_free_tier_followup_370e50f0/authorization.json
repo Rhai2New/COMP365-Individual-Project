@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-18T16:58:42.220161+00:00",
+  "source": "User follow-up in this conversation",
+  "free_tier_personally_verified_by_user": true,
+  "billing_disabled_confirmed_by_user": true,
+  "free_quota_generation_authorized": true,
+  "paid_calls_authorized": false,
+  "retry_or_model_fallback_not_permitted_without_evidence": true
+}

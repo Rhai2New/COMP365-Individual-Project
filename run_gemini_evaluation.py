@@ -48,6 +48,16 @@ def main() -> int:
     else:
         report['not_evaluated'] = [f'J{n:02d}' for n in range(2, 21)]
         report['reason'] = 'Smoke request did not return a response; no additional requests authorized by this helper'
+        if sources:
+            smoke_rows = read_records(sources[0])
+            if smoke_rows and smoke_rows[0]['request_made']:
+                remaining = [item for n in range(2, 21) for item in ('--case', f'J{n:02d}')]
+                skipped = subprocess.run([sys.executable, str(ROOT / 'benchmark_runner.py'),
+                    '--providers', 'gemini', '--gemini-model', args.model,
+                    '--blocked-by-run', str(sources[0]), '--timeout', '120',
+                    '--results-root', str(runs), *remaining], cwd=ROOT)
+                report['skipped_records_exit_code'] = skipped.returncode
+                report['runs'] = [str(p.relative_to(ROOT)) for p in sorted(runs.iterdir())]
     save_json(session / 'session.json', report)
     seal(session)
     print('Session evidence:', session)

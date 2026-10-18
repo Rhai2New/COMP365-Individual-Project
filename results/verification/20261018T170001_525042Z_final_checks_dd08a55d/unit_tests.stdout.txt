@@ -1,0 +1,14 @@
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmpungwcye_\20261018T170002_754532Z_benchmark_e10f210c
+J01 gemini: api_quota_failure
+J02 gemini: skipped_after_api_error
+J03 gemini: skipped_after_api_error
+Saved 3 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmpungwcye_\20261018T170002_754532Z_benchmark_e10f210c\summary
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmpdv62wiwc\smoke\20261018T170009_872322Z_benchmark_ee694567
+J01 gemini: api_access_error
+Saved 1 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmpdv62wiwc\smoke\20261018T170009_872322Z_benchmark_ee694567\summary
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmpdv62wiwc\skips\20261018T170011_556210Z_benchmark_8c1f8740
+J02 gemini: skipped_after_api_error
+Saved 1 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmpdv62wiwc\skips\20261018T170011_556210Z_benchmark_8c1f8740\summary
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmpmt6of2zl\20261018T170014_542663Z_benchmark_9ae0d34b
+J01 gemini: configuration_unavailable
+Saved 1 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmpmt6of2zl\20261018T170014_542663Z_benchmark_9ae0d34b\summary

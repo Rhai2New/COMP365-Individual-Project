@@ -1,0 +1,16 @@
+{
+  "saved_key_present": true,
+  "selected_key_matches_saved": true,
+  "key_matches_google_format": false,
+  "leading_or_trailing_whitespace": false,
+  "wrapped_in_quotes": false,
+  "base_url_override_present": false,
+  "proxy_schemes_present": [],
+  "vertex_mode_enabled": false,
+  "checked_utc": "2026-10-18T16:56:11.502274+00:00",
+  "network_requests": 0,
+  "free_tier_confirmed_by_user": true,
+  "billing_disabled_confirmed_by_user": true,
+  "failed_smoke_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "interpretation": "HTML HTTP 400 does not establish a model-ID problem; no configuration correction evident; no retry"
+}

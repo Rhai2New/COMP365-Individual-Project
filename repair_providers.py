@@ -106,6 +106,11 @@ def preflight(provider: str, model: str | None) -> dict:
         module = "google.genai" if provider == "gemini" else "openai"
         if not os.getenv(key) and not (provider == "gemini" and os.getenv("GOOGLE_API_KEY")):
             return {"available": False, "reason": f"{key} is not set; no live request made."}
+        if provider == 'gemini':
+            value = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY') or ''
+            if any(ord(character) < 32 or ord(character) == 127 for character in value):
+                return {'available': False, 'reason': 'Saved Gemini credential contains control characters; '
+                        'replace it privately with the API key value. No request made.'}
         try:
             installed = importlib.util.find_spec(module) is not None
         except ModuleNotFoundError:

@@ -1,0 +1,21 @@
+{
+  "compilation": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "J03.java:7: error: reached end of file while parsing\n}\n ^\n1 error\n",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J03.java"
+    ],
+    "seconds": 0.5714306000154465,
+    "success": false
+  },
+  "tests": [],
+  "infrastructure_error": null,
+  "functional_success": false
+}

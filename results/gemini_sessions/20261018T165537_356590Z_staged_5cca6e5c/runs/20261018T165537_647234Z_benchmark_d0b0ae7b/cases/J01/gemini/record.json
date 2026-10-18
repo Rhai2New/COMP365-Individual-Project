@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "case_id": "J01",
+  "source": "J01.java",
+  "language": "java",
+  "bug_type": "syntax:semicolon",
+  "category": "syntax",
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "resolved_model": null,
+  "status": "api_access_error",
+  "request_made": true,
+  "response_received": false,
+  "repair_attempted": false,
+  "patch_changed_source": null,
+  "patch_compile_success": null,
+  "visible_test_success": null,
+  "hidden_test_success": null,
+  "test_success": null,
+  "response_seconds": 2.0816438000183553,
+  "error": "400 Bad Request. {'message': '<html><title>Error 400 (Bad Request)!!1</title></html>', 'status': 'Bad Request'}",
+  "artifact_dir": "cases/J01/gemini"
+}

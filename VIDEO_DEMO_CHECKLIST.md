@@ -14,9 +14,9 @@ This is an operating checklist, not a narration script. Speak in your own voice.
 - [ ] J05 / baseline: unchanged patch compiles but fails functional tests. If you personally change `a - b` to `a + b` and retest, identify your edit as excluded from model benchmark results.
 - [ ] J12 or J20 / saved Qwen: runtime bug, exact response, replay label, recorded generation time, held-out results. Retest for a fresh local execution check.
 - [ ] Open the displayed evidence directory: source, response/envelope, patch/diff, compiler output, tests, and CSV/JSON. Distinguish original experiments from UI reviews.
-- [ ] Open `results/comparisons/20261018T154343_232420Z_final_328a03d4/tables.md` and `figure_ready_data.csv`. Show baseline 1/20 and Qwen 9/20 functional per response; Gemini unevaluated. Distinguish Qwen's 13/13 extracted-patch compile rate from 13/20 delivered responses.
+- [ ] Open `results/comparisons/20261018T165842_557570Z_final_a1ed1438/tables.md` and `figure_ready_data.csv`. Show baseline 1/20 and Qwen 9/20 functional per response; Gemini unevaluated. Distinguish Qwen's 13/13 extracted-patch compile rate from 13/20 delivered responses.
 - [ ] Show syntax/logic/runtime results and seven invalid Qwen responses. Patch success does not establish explanation accuracy.
-- [ ] Show Gemini metadata preflight and unavailable records; there is no generation response or repair score. Never display the key.
+- [ ] Show the actual J01 HTTP 400 error and 2.081643800 s failed-request timing, plus J02-J20 skipped records. Free Tier was personally verified by the student, but no model response or repair score exists. Never display the key.
 - [ ] Show the blank human worksheet and separate preliminary AI ratings. Report only human judgments you personally completed.
 
 ## Commands worth showing
@@ -25,7 +25,7 @@ This is an operating checklist, not a narration script. Speak in your own voice.
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe validate_benchmarks.py
 .\.venv\Scripts\python.exe summarize_results.py results\runs\20261018T131412_396245Z_benchmark_41bb2533 --check
-.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T154343_232420Z_final_328a03d4
+.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T165842_557570Z_final_a1ed1438
 ```
 
 - [ ] Show `submission/LATEST_SUBMISSION.json`, its verification sidecar, and the local review branch. Do not push without approval.

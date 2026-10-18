@@ -7,6 +7,6 @@
 5. Record your own video using [the operating checklist](../VIDEO_DEMO_CHECKLIST.md); check audio, readability, and link permissions.
 6. Inspect the separate local Git branch and commits. Explicitly approve any future push. No merge to main was performed.
 7. Check `submission/LATEST_SUBMISSION.json`, the ZIP verification sidecar, and actual Canvas fields. Upload the paper, video/link, and technical materials yourself before October 18, 2026 at 11:59 PM ET; verify receipt.
-8. To return to Gemini, resolve HTTP 400 access, verify the exact key project's Free Tier with billing disabled and remaining quota, then use the staged helper. Do not repeatedly retry or enable paid billing. New evidence requires updated tables and a fresh verified ZIP.
+8. To return to Gemini, privately correct the control-character-containing Windows user credential and resolve HTTP 400 access; Free Tier with billing disabled is already personally verified by the user; confirm remaining free quota, then use the staged helper. Do not repeatedly retry or enable paid billing. New evidence requires updated tables and a fresh verified ZIP.
 
 Professor Pope's complete feedback/final rubric was unavailable; check additional criteria yourself. No Canvas, conference submission, Overleaf editing, GitHub push, or main merge was performed.

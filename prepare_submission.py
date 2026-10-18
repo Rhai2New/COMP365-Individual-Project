@@ -82,7 +82,8 @@ def main() -> int:
             cwd=extracted, text=True, encoding="utf-8", errors="replace", capture_output=True)
         save_text(folder / f"{stamp}_package_tests.txt", proc.stdout + proc.stderr)
         summary_checks = []
-        for run in sorted((extracted / "results" / "runs").iterdir()):
+        for run in sorted(p.parent for p in (extracted / 'results').rglob('completion.json')
+                          if (p.parent / 'cases').is_dir()):
             check = subprocess.run([sys.executable, "summarize_results.py", str(run), "--check"],
                 cwd=extracted, text=True, encoding="utf-8", errors="replace", capture_output=True)
             summary_checks.append({"run_id": run.name, "passed": check.returncode == 0,

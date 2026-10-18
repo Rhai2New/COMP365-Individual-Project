@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T165729_486199Z_benchmark_d3df46ae,J20,J20.java,java,runtime:division_by_zero,runtime,gemini,gemini-3.8-flash,,skipped_after_api_error,False,False,False,,,,,,,Circuit breaker: no request after api_access_error in 20261018T165537_647234Z_benchmark_d0b0ae7b,cases/J20/gemini

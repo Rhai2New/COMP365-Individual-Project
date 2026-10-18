@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "patches_replayed": 33,
+  "checks": [
+    {
+      "case_id": "J01",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J01",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J02",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J02",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J03",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J03",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J04",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J04",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J05",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J06",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J06",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J07",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J08",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J09",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J09",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J10",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J11",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J11",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J12",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J12",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J13",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J14",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J14",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J15",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J16",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J16",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J17",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J17",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J18",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J18",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J19",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J20",
+      "provider": "demo",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J20",
+      "provider": "llama_cpp",
+      "matches_saved_outcomes": true
+    }
+  ]
+}

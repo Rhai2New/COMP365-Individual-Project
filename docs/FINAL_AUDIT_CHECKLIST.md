@@ -5,7 +5,7 @@ Sources: the user's October 18 requirements, checkpoint evidence, the [student p
 | Requirement / concern | Status | Evidence / remaining action |
 |---|---|---|
 | Preserve exact outputs; prevent overwriting | Complete | Unique folders, raw responses/envelopes, source/prompt/patch/test files, CSV/JSON, hashes; historical evidence preserved |
-| Three actual systems evaluated | Incomplete | Baseline/Qwen completed; Gemini billing unverified; metadata access returned HTTP 400 |
+| Three actual systems evaluated | Incomplete | Baseline/Qwen completed; user verified Free Tier/billing disabled; J01 HTTP 400, no response; J02-J20 skipped |
 | Same source, prompt, caps, tests | Verified | Comparison source/prompt/test hashes checked for all 20 cases |
 | Actual Qwen identity | Verified | Official pinned GGUF revision/hash, server hash/build/fingerprint, saved configuration |
 | Actual Gemini served version | Unknown | Requested ID publicly documented; no successful response resolves the version |

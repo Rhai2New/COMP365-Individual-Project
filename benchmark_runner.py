@@ -141,6 +141,8 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--results-root", type=Path, default=RESULTS_DIR / "runs")
     parser.add_argument("--output", help="Legacy label only; never overwrites this path")
+    parser.add_argument('--blocked-by-run', type=Path,
+                        help='Save skipped Gemini cases without requests, linked to an actual failed smoke run')
     parser.add_argument("--allow-live", action="store_true", help="Enable cloud requests after checking billing/quota")
     parser.add_argument("--gemini-free-tier-confirmed", action="store_true",
                         help="Attest that this key's project is verified Free Tier with billing disabled")
@@ -170,6 +172,20 @@ def main() -> int:
         cases = [c for c in cases if c["case_id"] in args.case]
     if args.limit:
         cases = cases[:args.limit]
+    blocked_reason = None
+    if args.blocked_by_run:
+        from summarize_results import read_records
+        prior = read_records(args.blocked_by_run.resolve())
+        failures = [r for r in prior if r['provider'] == 'gemini' and r['request_made']
+                    and not r['response_received'] and (r['status'].startswith('api_')
+                    or r['status'] == 'provider_internal_error')]
+        if providers != ['gemini'] or args.allow_live or not failures:
+            parser.error('--blocked-by-run requires a failed Gemini request and disables live calls')
+        if any(r['model'] != models['gemini'] for r in failures):
+            parser.error('Blocked cases must use the failed request model ID')
+        if {c['case_id'] for c in cases} & {r['case_id'] for r in prior}:
+            parser.error('Blocked cases must exclude already recorded smoke cases')
+        blocked_reason = f"Circuit breaker: no request after {failures[0]['status']} in {args.blocked_by_run.name}"
     configure_java()
     if not shutil.which("java") or not shutil.which("javac"):
         parser.error("Install a JDK and put java and javac on PATH (or set JAVA_HOME)")
@@ -188,6 +204,8 @@ def main() -> int:
                   "llama_cpp": {"temperature": 0, "seed": 365, "cache_prompt": False},
                   "ollama": {"temperature": 0, "seed": 365}},
               "legacy_output_hint": args.output, "purpose": "live_or_local_benchmark"}
+    if args.blocked_by_run:
+        config['blocked_by_run'] = str(args.blocked_by_run.resolve())
     provenance = ROOT / "local_model_provenance.json"
     if "llama_cpp" in providers and provenance.exists():
         config["local_model_provenance"] = json.loads(provenance.read_text(encoding="utf-8"))
@@ -201,7 +219,7 @@ def main() -> int:
             source = (BENCHMARK_DIR / case["source"]).read_text(encoding="utf-8")
             original = evaluate_java(source, case["source"], [dict(t, split="visible") for t in case["tests"]])
             for provider in providers:
-                reason = circuits.get(provider)
+                reason = blocked_reason or circuits.get(provider)
                 if not reason and not checks[provider]["available"]:
                     reason = checks[provider]["reason"]
                 if not reason and provider in {"gemini", "openai"}:
