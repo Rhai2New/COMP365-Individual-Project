@@ -1,0 +1,7 @@
+{
+  "model": null,
+  "instructions": "You are a debugging assistant for an introductory programming course.\nAnalyze only the supplied Java or C++ program and the supplied failure context.\nThe failure context may be a compiler error, runtime error, or failed black-box test.\nUse beginner-friendly concepts and make the smallest general repair that fixes the underlying bug.\nDo not redesign the whole program, add unrelated features, hardcode the provided expected outputs,\nor introduce advanced patterns when a simple introductory fix is available.\nPreserve the program's input/output behavior except for correcting the bug.\n\nReturn EXACTLY these sections:\nROOT CAUSE:\n<1-3 concise sentences>\n\nBEGINNER EXPLANATION:\n<plain-English explanation suitable for an introductory student>\n\nPATCHED CODE:\n```<language>\n<complete corrected source code>\n```\n",
+  "input": "LANGUAGE: java\n\nFAILURE CONTEXT:\nTEST FAILURE:\nTest 1 FAILED\nInput: '60\\n'\nExpected: 'pass'\nActual: 'fail\\n'\nStderr: \nExit code: 0\nTimed out: False\n\nSOURCE CODE:\n```java\nimport java.util.Scanner;\npublic class J17 {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int score = sc.nextInt();\n        if (score > 60) {\n            System.out.println(\"pass\");\n        } else {\n            System.out.println(\"fail\");\n        }\n    }\n}\n\n```\n",
+  "max_output_tokens": 2048,
+  "store": false
+}

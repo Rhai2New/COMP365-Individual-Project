@@ -1,1 +1,4 @@
-openai>=2.0.0
+# Core demo/local HTTP runner uses Python 3.10+ standard library.
+# Pinned SDKs used to verify the cloud adapter interfaces (no paid requests).
+openai==2.54.0
+google-genai==2.31.0

@@ -1,0 +1,8 @@
+TEST FAILURE:
+Test 1 FAILED
+Input: 'yes\n'
+Expected: 'accepted'
+Actual: 'rejected\n'
+Stderr: 
+Exit code: 0
+Timed out: False

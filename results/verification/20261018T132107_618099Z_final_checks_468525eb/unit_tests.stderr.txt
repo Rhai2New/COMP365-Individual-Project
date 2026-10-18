@@ -1,0 +1,19 @@
+test_api_error_and_invalid_not_repairs (test_evaluation.EvaluationTests.test_api_error_and_invalid_not_repairs) ... ok
+test_child_process_does_not_receive_api_key (test_evaluation.EvaluationTests.test_child_process_does_not_receive_api_key) ... ok
+test_circuit_breaker_makes_only_one_failed_api_call (test_evaluation.EvaluationTests.test_circuit_breaker_makes_only_one_failed_api_call) ... ok
+test_cloud_sdk_request_contracts_without_network (test_evaluation.EvaluationTests.test_cloud_sdk_request_contracts_without_network) ... ok
+test_compilation_failure_is_distinct (test_evaluation.EvaluationTests.test_compilation_failure_is_distinct) ... ok
+test_error_classification (test_evaluation.EvaluationTests.test_error_classification) ... ok
+test_explicit_denominators (test_evaluation.EvaluationTests.test_explicit_denominators) ... ok
+test_hidden_output_not_in_prompt (test_evaluation.EvaluationTests.test_hidden_output_not_in_prompt) ... ok
+test_patch_parser_rejects_empty_and_malformed (test_evaluation.EvaluationTests.test_patch_parser_rejects_empty_and_malformed) ... ok
+test_process_timeout (test_evaluation.EvaluationTests.test_process_timeout) ... ok
+test_reference_control_is_not_baseline (test_evaluation.EvaluationTests.test_reference_control_is_not_baseline) ... ok
+test_twenty_cases_oracles_and_split (test_evaluation.EvaluationTests.test_twenty_cases_oracles_and_split) ... ok
+test_unique_runs_and_no_overwrite (test_evaluation.EvaluationTests.test_unique_runs_and_no_overwrite) ... ok
+test_wrong_compiling_program_fails_hidden_tests (test_evaluation.EvaluationTests.test_wrong_compiling_program_fails_hidden_tests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 10.338s
+
+OK

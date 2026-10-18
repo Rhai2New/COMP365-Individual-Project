@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T153859_032470Z_benchmark_60bcc2f4,J19,J19.java,java,logic:minimum_comparison,logic,gemini,gemini-3.8-flash,,configuration_unavailable,False,False,False,,,,,,,Gemini billing tier unverified; no generation request made (free-tier-only policy),cases/J19/gemini

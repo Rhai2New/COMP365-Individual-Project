@@ -1,0 +1,23 @@
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J20 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int total = sc.nextInt();
+        int count = sc.nextInt();
+        int average = total / count;
+        if (count == 0) {
+            System.out.println("undefined");
+        } else {
+            System.out.println(average);
+        }
+    }
+}
+```

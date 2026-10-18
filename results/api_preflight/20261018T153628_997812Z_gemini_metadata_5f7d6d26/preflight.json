@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-18T15:36:28.999094+00:00",
+  "credential_source": "Windows HKCU Environment / GEMINI_API_KEY",
+  "credential_present": true,
+  "generation_requests": 0,
+  "billing_status": "unverified",
+  "billing_verification_blocker": "No browser surfaces or gcloud session available; no account tier proof",
+  "official_billing_reference": "https://ai.google.dev/gemini-api/docs/billing",
+  "metadata_request_count": 1,
+  "automatic_retries": 0,
+  "metadata_access": "failed",
+  "error_type": "HTTPError",
+  "http_status": 400,
+  "message": "HTTP Error 400: Bad Request"
+}

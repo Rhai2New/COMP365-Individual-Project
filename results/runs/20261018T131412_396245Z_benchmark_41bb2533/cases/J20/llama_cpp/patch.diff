@@ -1,0 +1,14 @@
+--- a/J20.java
++++ b/J20.java
+@@ -4,10 +4,10 @@
+         Scanner sc = new Scanner(System.in);
+         int total = sc.nextInt();
+         int count = sc.nextInt();
+-        int average = total / count;
+         if (count == 0) {
+             System.out.println("undefined");
+         } else {
++            int average = total / count;
+             System.out.println(average);
+         }
+     }

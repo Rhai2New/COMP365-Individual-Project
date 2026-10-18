@@ -1,0 +1,43 @@
+CASE: J12
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: runtime:array_bound
+
+FAILURE CONTEXT
+------------------------------------------------------------
+TEST FAILURE:
+Test 1 FAILED
+Input: <none>
+Expected: '12'
+Actual: 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\n\tat J12.main(J12.java:6)'
+Exit code: 1
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+public class J12 {
+    public static void main(String[] args) {
+        int[] values = {2, 4, 6};
+        int total = 0;
+        for (int i = 0; i <= values.length; i++) {
+            total += values[i];
+        }
+        System.out.println(total);
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+Test 1 FAILED
+Input: <none>
+Expected: '12'
+Actual: 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\n\tat J12.main(J12.java:6)'
+Exit code: 1

@@ -1,3 +1,5 @@
+HISTORICAL CHECKPOINT MATERIAL: current instructions and verified results are in README.md and docs/FINAL_TECHNICAL_STATUS.md.
+
 COMP 365 - Practical Checkpoint 1
 Interactive Code Bug Explainer & Patch Generator
 

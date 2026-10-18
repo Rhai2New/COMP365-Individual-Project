@@ -1,0 +1,85 @@
+{
+  "compilation": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J12.java"
+    ],
+    "seconds": 0.6678306999965571,
+    "success": true
+  },
+  "tests": [
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\n\tat J12.main(J12.java:6)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J12"
+      ],
+      "seconds": 0.09141960000852123,
+      "index": 1,
+      "test_id": "visible_1",
+      "split": "visible",
+      "input": "",
+      "expected": "12",
+      "success": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\n\tat J12.main(J12.java:6)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J12"
+      ],
+      "seconds": 0.0930413999594748,
+      "index": 2,
+      "test_id": "hidden_1",
+      "split": "hidden",
+      "input": "unused input\n",
+      "expected": "12",
+      "success": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\n\tat J12.main(J12.java:6)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J12"
+      ],
+      "seconds": 0.09610329999122769,
+      "index": 3,
+      "test_id": "hidden_2",
+      "split": "hidden",
+      "input": "0\n",
+      "expected": "12",
+      "success": false
+    }
+  ],
+  "infrastructure_error": null,
+  "functional_success": false
+}

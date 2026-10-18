@@ -1,0 +1,8 @@
+Provider: gemini
+Cases: 1
+Patch compile success: 1/1 (100.0%)
+Functional test success: 1/1 (100.0%)
+Average response time: 6.841 s
+Syntax test success: 1/1
+Logic test success: n/a
+Runtime test success: n/a

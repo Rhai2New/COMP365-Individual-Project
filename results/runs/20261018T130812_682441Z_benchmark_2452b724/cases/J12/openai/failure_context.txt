@@ -1,0 +1,10 @@
+TEST FAILURE:
+Test 1 FAILED
+Input: ''
+Expected: '12'
+Actual: ''
+Stderr: Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at J12.main(J12.java:6)
+
+Exit code: 1
+Timed out: False

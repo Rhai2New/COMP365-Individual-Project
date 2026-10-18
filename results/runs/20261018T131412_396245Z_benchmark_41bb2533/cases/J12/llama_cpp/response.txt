@@ -1,0 +1,18 @@
+ROOT CAUSE: The `ArrayIndexOutOfBoundsException` occurs because the loop variable `i` is out of bounds for the array `values` with a length of 3. The loop should iterate from 0 to 2, but since the array only has 3 elements, the loop will only execute once, and the value of `total` will be 6.
+
+BEGINNER EXPLANATION:
+The `ArrayIndexOutOfBoundsException` is thrown when you try to access an index that is out of the bounds of an array. In this case, the loop variable `i` is 3, which is out of bounds for the array `values` with a length of 3. The expected output is 6, but the actual output is 6.
+
+PATCHED CODE:
+```java
+public class J12 {
+    public static void main(String[] args) {
+        int[] values = {2, 4, 6};
+        int total = 0;
+        for (int i = 0; i < values.length; i++) {
+            total += values[i];
+        }
+        System.out.println(total);
+    }
+}
+```

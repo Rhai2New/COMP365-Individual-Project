@@ -1,3 +1,5 @@
+HISTORICAL CHECKPOINT MATERIAL: current instructions and verified results are in README.md and docs/FINAL_TECHNICAL_STATUS.md.
+
 Local verification completed in the build environment:
 
 1. Java smoke test

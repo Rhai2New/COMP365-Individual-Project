@@ -1,0 +1,16 @@
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+public class J03 {
+    public static void main(String[] args) {
+        int x = 3;
+        if (x > 0) {
+            System.out.println("positive");
+    }
+}
+```

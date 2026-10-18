@@ -1,0 +1,55 @@
+CASE: J14
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: logic:area_formula
+
+FAILURE CONTEXT
+------------------------------------------------------------
+TEST FAILURE:
+Test 1 FAILED
+Input: 4 5
+Expected: '20'
+Actual: '9'
+Exit code: 0
+
+Test 2 FAILED
+Input: 2 9
+Expected: '18'
+Actual: '11'
+Exit code: 0
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J14 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int length = sc.nextInt();
+        int width = sc.nextInt();
+        int area = length + width;
+        System.out.println(area);
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+Test 1 FAILED
+Input: 4 5
+Expected: '20'
+Actual: '9'
+Exit code: 0
+
+Test 2 FAILED
+Input: 2 9
+Expected: '18'
+Actual: '11'
+Exit code: 0

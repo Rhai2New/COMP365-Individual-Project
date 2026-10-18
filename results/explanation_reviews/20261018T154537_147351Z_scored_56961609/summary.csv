@@ -1,0 +1,3 @@
+provider,rater,rater_type,rated_responses,available_responses,root_cause_accuracy,repair_reasoning,beginner_clarity,case_specificity,mean_total_out_of_8
+demo,Codex preliminary technical review (2026-10-18),AI_assisted,20,20,0.1,0.05,2.0,0.05,2.2
+llama_cpp,Codex preliminary technical review (2026-10-18),AI_assisted,20,20,0.25,0.1,0.8,0.75,1.9

@@ -1,0 +1,12 @@
+{
+  "BuggyGreeting.java": "da963b6abc3ccc51c48ad80a8c993ff468b0cdb2e42294f58f9a77f9ffc0aa71",
+  "compilation.json": "8eb7a94ff65d843ea1296fdf48f0587de5688d2faa43caa48bec6adb65916018",
+  "config.json": "437f3d694bc0eeda524f5c090f4f8fcc876cb7d2acd7af315fe0d63d11b1376d",
+  "patch/BuggyGreeting.java": "265fdc7e0e9751044f59bead6ae285759f14a442aec2e4e43a40c77b57796488",
+  "patch.diff": "695d266e49ba584e275a784f2c741953214422d35fdb084eb9d8e9b809e3a0b3",
+  "prompt.json": "67427b41066d7a6c84a0710f2d586d426acdd11c472da7b3f7dff82f36eb3537",
+  "report.txt": "733542948f1f041695cb9d48d3a0078698ec9540f16d811650da96168135514e",
+  "response.txt": "17022e9f83ea6f6131259e1eadaef67d732ae07139ad8d9d4b0fc342e9bffcc3",
+  "response_envelope.json": "f61e23fdc7935e846011960669c2fc76d08159cfbcd816069b75eaf904c65037",
+  "timing.json": "79704b34e6744039c860b0d6e1a20ae3ec2074f0c1eda71c15b853388d4a50ae"
+}

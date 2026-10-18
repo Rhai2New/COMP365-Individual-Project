@@ -1,0 +1,22 @@
+ROOT CAUSE: The program is attempting to swap the values of `a` and `b` without considering the order of input.
+
+BEGINNER EXPLANATION:
+The program is attempting to swap the values of `a` and `b` without considering the order of input. This is because the `temp` variable is used to store the value of `a` before it is swapped with `b`. After the swap, `a` will be the value of `b` and `b` will be the value of `a`. This means that the order of input does not affect the output.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J18 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println(a + " " + b);
+    }
+}
+```
+
+This corrected code swaps the values of `a` and `b` without considering the order of input.

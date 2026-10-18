@@ -1,0 +1,5 @@
+{
+  "provider": "demo",
+  "model": "local-rule-baseline-v1",
+  "text": "ROOT CAUSE:\nThe local rule-based baseline could not identify this bug with its small rule set.\n\nBEGINNER EXPLANATION:\nThis baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.\n\nPATCHED CODE:\n```java\npublic class J03 {\n    public static void main(String[] args) {\n        int x = 3;\n        if (x > 0) {\n            System.out.println(\"positive\");\n    }\n}\n```"
+}

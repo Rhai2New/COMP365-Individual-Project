@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T131412_396245Z_benchmark_41bb2533",
+  "case_id": "J15",
+  "source": "J15.java",
+  "language": "java",
+  "bug_type": "logic:counter_update",
+  "category": "logic",
+  "provider": "llama_cpp",
+  "model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "resolved_model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "status": "invalid_response",
+  "request_made": true,
+  "response_received": true,
+  "repair_attempted": false,
+  "patch_changed_source": null,
+  "patch_compile_success": null,
+  "visible_test_success": null,
+  "hidden_test_success": null,
+  "test_success": null,
+  "response_seconds": 37.33436060004169,
+  "error": null,
+  "artifact_dir": "cases/J15/llama_cpp"
+}

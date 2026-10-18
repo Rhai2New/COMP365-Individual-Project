@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T131412_396245Z_benchmark_41bb2533",
+  "case_id": "J09",
+  "source": "J09.java",
+  "language": "java",
+  "bug_type": "logic:integer_division",
+  "category": "logic",
+  "provider": "llama_cpp",
+  "model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "resolved_model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "status": "functional_test_failure",
+  "request_made": true,
+  "response_received": true,
+  "repair_attempted": true,
+  "patch_changed_source": false,
+  "patch_compile_success": true,
+  "visible_test_success": false,
+  "hidden_test_success": false,
+  "test_success": false,
+  "response_seconds": 3.9673096000333317,
+  "error": null,
+  "artifact_dir": "cases/J09/llama_cpp"
+}

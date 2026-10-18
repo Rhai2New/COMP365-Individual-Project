@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T131412_396245Z_benchmark_41bb2533,J10,J10.java,java,logic:string_equality,logic,llama_cpp,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,invalid_response,True,True,False,,,,,,36.654053599981125,,cases/J10/llama_cpp

@@ -1,3 +1,11 @@
+HISTORICAL CHECKPOINT INSTRUCTIONS — DO NOT FOLLOW FOR THE FINAL WORKSPACE
+
+Current repository audit: docs/REPOSITORY_AND_EVIDENCE_AUDIT.md
+The actual existing Git checkout is C:\NCAT\COMP365_Checkpoint2.
+The requested workspace is an unversioned copy. Do not git init it or recreate GitHub.
+No push has been performed. Review and approve integration with existing history first.
+Original instructions below are retained only as historical context.
+
 Recommended commit sequence
 
 1. Commit your existing Checkpoint 1 state before copying the Checkpoint 2 files:

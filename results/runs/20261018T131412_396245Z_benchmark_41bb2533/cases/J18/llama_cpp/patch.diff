@@ -1,0 +1,11 @@
+--- a/J18.java
++++ b/J18.java
+@@ -6,7 +6,7 @@
+         int b = sc.nextInt();
+         int temp = a;
+         a = b;
+-        b = a;
++        b = temp;
+         System.out.println(a + " " + b);
+     }
+ }

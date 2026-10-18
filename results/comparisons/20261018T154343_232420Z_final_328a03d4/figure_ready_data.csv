@@ -1,0 +1,13 @@
+provider,model,category,scheduled_cases,responses_received,repair_attempts,compile_successes,visible_test_successes,hidden_test_successes,functional_successes,invalid_responses,mean_successful_response_seconds
+demo,local-rule-baseline-v1,all,20,20,20,17,1,2,1,0,5.6504999520257115e-05
+demo,local-rule-baseline-v1,syntax,4,4,4,1,1,1,1,0,0.00013500000932253897
+demo,local-rule-baseline-v1,logic,14,14,14,14,0,1,0,0,3.750713741672891e-05
+demo,local-rule-baseline-v1,runtime,2,2,2,2,0,0,0,0,3.250001464039087e-05
+gemini,gemini-3.8-flash,all,20,0,0,0,0,0,0,0,
+gemini,gemini-3.8-flash,syntax,4,0,0,0,0,0,0,0,
+gemini,gemini-3.8-flash,logic,14,0,0,0,0,0,0,0,
+gemini,gemini-3.8-flash,runtime,2,0,0,0,0,0,0,0,
+llama_cpp,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,all,20,20,13,13,9,10,9,7,15.4315253650042
+llama_cpp,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,syntax,4,4,4,4,4,4,4,0,2.8863234000018565
+llama_cpp,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,logic,14,14,7,7,3,4,3,7,20.59297365715195
+llama_cpp,Qwen2.5-Coder-0.5B-Instruct-Q4_K_M,runtime,2,2,2,2,2,2,2,0,4.391791249974631

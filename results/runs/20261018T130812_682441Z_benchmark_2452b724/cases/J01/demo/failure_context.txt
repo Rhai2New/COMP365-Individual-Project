@@ -1,0 +1,5 @@
+COMPILER ERROR:
+J01.java:3: error: ';' expected
+        System.out.println("Hello")
+                                   ^
+1 error

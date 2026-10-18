@@ -1,0 +1,27 @@
+{
+  "remote": "https://github.com/Rhai2New/COMP365-Individual-Project",
+  "head": "778a729e9ad0ecd9d508738d05ed04ec74350429",
+  "workspace_is_git_checkout": false,
+  "matching_checkout": "C:\\NCAT\\COMP365_Checkpoint2",
+  "inspection_clone": "C:\\NCAT\\COMP365_GitHub_Inspection_20261018",
+  "common_original_files": [],
+  "different_original_files": [
+    ".gitignore",
+    "benchmark_runner.py",
+    "bug_explainer.py",
+    "dataset_manifest.csv",
+    "dataset_sources.txt",
+    "fetch_project_datasets.bat",
+    "GIT_SETUP.txt",
+    "README_CHECKPOINT2.md",
+    "README_FIRST.txt",
+    "RELATED_WORKS.md",
+    "requirements.txt",
+    "run_baseline_only.bat",
+    "run_checkpoint2_benchmark.bat",
+    "run_cpp_demo_test.bat",
+    "run_demo_test.bat",
+    "run_live_openai_test.bat",
+    "TEST_RESULTS.txt"
+  ]
+}

@@ -1,0 +1,19 @@
+CASE: J02
+PROVIDER: openai
+BUG TYPE: syntax:missing_parenthesis
+
+FAILURE CONTEXT
+------------------------------------------------------------
+COMPILER ERROR:
+J02.java:4: error: ')' or ',' expected
+        System.out.println(x * 2;
+                                ^
+1 error
+
+REPAIR RESPONSE
+------------------------------------------------------------
+<no response>
+
+VALIDATION
+------------------------------------------------------------
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: AQ.Ab8RN*****************************************WnUA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

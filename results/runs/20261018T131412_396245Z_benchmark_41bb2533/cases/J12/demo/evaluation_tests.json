@@ -1,0 +1,20 @@
+[
+  {
+    "input": "",
+    "expected": "12",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "unused input\n",
+    "expected": "12",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "0\n",
+    "expected": "12",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  }
+]

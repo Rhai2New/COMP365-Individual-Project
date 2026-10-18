@@ -1,0 +1,64 @@
+{
+  "compilation": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J18.java"
+    ],
+    "seconds": 0.8739182999706827,
+    "success": true
+  },
+  "tests": [
+    {
+      "returncode": 0,
+      "stdout": "7 7\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.13126440002815798,
+      "index": 1,
+      "test_id": "test_1",
+      "split": "visible",
+      "input": "3 7\n",
+      "expected": "7 3",
+      "success": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "5 5\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.13204739999491721,
+      "index": 2,
+      "test_id": "test_2",
+      "split": "visible",
+      "input": "-1 5\n",
+      "expected": "5 -1",
+      "success": false
+    }
+  ],
+  "infrastructure_error": null,
+  "functional_success": false
+}

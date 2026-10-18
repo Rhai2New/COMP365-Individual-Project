@@ -1,0 +1,57 @@
+CASE: J06
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: logic:off_by_one
+
+FAILURE CONTEXT
+------------------------------------------------------------
+TEST FAILURE:
+Test 1 FAILED
+Input: 5
+Expected: '15'
+Actual: '10'
+Exit code: 0
+
+Test 2 FAILED
+Input: 1
+Expected: '1'
+Actual: '0'
+Exit code: 0
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i < n; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+Test 1 FAILED
+Input: 5
+Expected: '15'
+Actual: '10'
+Exit code: 0
+
+Test 2 FAILED
+Input: 1
+Expected: '1'
+Actual: '0'
+Exit code: 0

@@ -1,0 +1,5 @@
+{
+  "provider": "demo",
+  "model": "local-rule-baseline-v1",
+  "text": "ROOT CAUSE:\nThe statement is missing its terminating semicolon.\n\nBEGINNER EXPLANATION:\nJava statements such as this one normally end with a semicolon.\n\nPATCHED CODE:\n```java\npublic class BuggyGreeting {\n    public static void main(String[] args) {\n        String name = \"Aggie\";\n        System.out.println(\"Hello, \" + name);\n    }\n}\n```"
+}

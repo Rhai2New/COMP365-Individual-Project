@@ -1,0 +1,5 @@
+COMPILER ERROR:
+J04.java:3: error: ';' expected
+        int total == 7;
+                 ^
+1 error

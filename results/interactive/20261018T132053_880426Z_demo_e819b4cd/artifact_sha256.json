@@ -1,0 +1,12 @@
+{
+  "BuggyTotal.cpp": "f21b67864cb0fbb68c2c15537f68b3eab5f2927af11136e1d03da68efa94baf2",
+  "compilation.json": "8eb7a94ff65d843ea1296fdf48f0587de5688d2faa43caa48bec6adb65916018",
+  "config.json": "59ec99cf49361aadcc54afe918d3d503f052addfdead2e2d728fe3ae1507d53c",
+  "patch/BuggyTotal.cpp": "dd5c749dd7fe87eeec8ec70c9e185e5d0bcbe078d64bc070aa629a307d7b2c92",
+  "patch.diff": "6ad6dbbb62bfac44e7517e6a4651ff671e629cc07e7d9575409482a760bbdae8",
+  "prompt.json": "a4e9d3fc65783c8141b7348270b4c8802ae57488d861b3093f539b16af13af16",
+  "report.txt": "957ace8ea3d374328666b87db66f06784a83bf729cf034144a84407b1ca710c7",
+  "response.txt": "231d7078d0df78754b0d8cdfe643de43bbf0a2f147a30a873ebe924437022069",
+  "response_envelope.json": "c42b61bab7accf7db47f13e589f744e4f08322c2c1081f1e186d76298400a566",
+  "timing.json": "ad9034c130d9e8644f8d0ac350c5f83732d0ed90beef6a7be807e20ecfd0a44c"
+}

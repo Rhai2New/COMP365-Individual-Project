@@ -1,0 +1,64 @@
+{
+  "compilation": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J20.java"
+    ],
+    "seconds": 0.7890527999843471,
+    "success": true
+  },
+  "tests": [
+    {
+      "returncode": 0,
+      "stdout": "5\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J20"
+      ],
+      "seconds": 0.12884860002668574,
+      "index": 1,
+      "test_id": "test_1",
+      "split": "visible",
+      "input": "10 2\n",
+      "expected": "5",
+      "success": true
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.ArithmeticException: / by zero\n\tat J20.main(J20.java:7)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J20"
+      ],
+      "seconds": 0.11610490002203733,
+      "index": 2,
+      "test_id": "test_2",
+      "split": "visible",
+      "input": "10 0\n",
+      "expected": "undefined",
+      "success": false
+    }
+  ],
+  "infrastructure_error": null,
+  "functional_success": false
+}

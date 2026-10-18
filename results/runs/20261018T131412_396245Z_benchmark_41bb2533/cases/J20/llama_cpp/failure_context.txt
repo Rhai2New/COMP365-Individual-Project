@@ -1,0 +1,10 @@
+TEST FAILURE:
+Test 2 FAILED
+Input: '10 0\n'
+Expected: 'undefined'
+Actual: ''
+Stderr: Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at J20.main(J20.java:7)
+
+Exit code: 1
+Timed out: False

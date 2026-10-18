@@ -1,0 +1,12 @@
+{
+  "historical_csv_success_case_ids": [
+    "J01",
+    "J02",
+    "J03"
+  ],
+  "historical_csv_distinct_success_count": 3,
+  "success_claim_rows": 4,
+  "preserved_response_files_containing_patches": 0,
+  "validated_live_gemini_repairs_in_this_session": 0,
+  "reported_eight_successes": "unverified historical claim; not reproduced"
+}

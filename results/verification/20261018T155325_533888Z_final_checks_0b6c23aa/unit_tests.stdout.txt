@@ -1,0 +1,8 @@
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmp_wlmqwdu\20261018T155326_765801Z_benchmark_816eec66
+J01 gemini: api_quota_failure
+J02 gemini: skipped_after_api_error
+J03 gemini: skipped_after_api_error
+Saved 3 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmp_wlmqwdu\20261018T155326_765801Z_benchmark_816eec66\summary
+Evidence directory: C:\Users\rhyne\AppData\Local\Temp\tmp_pgpfdvr\20261018T155335_585562Z_benchmark_975c6e08
+J01 gemini: configuration_unavailable
+Saved 1 records; summaries: C:\Users\rhyne\AppData\Local\Temp\tmp_pgpfdvr\20261018T155335_585562Z_benchmark_975c6e08\summary

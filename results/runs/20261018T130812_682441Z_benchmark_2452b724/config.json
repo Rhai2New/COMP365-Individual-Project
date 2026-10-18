@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "run_id": "20261018T130812_682441Z_benchmark_2452b724",
+  "started_utc": "2026-10-18T13:08:12.682441+00:00",
+  "providers": [
+    "demo",
+    "gemini",
+    "openai",
+    "ollama"
+  ],
+  "models": {
+    "demo": "local-rule-baseline-v1",
+    "gemini": "gemini-3.8-flash",
+    "openai": null,
+    "ollama": null
+  },
+  "case_ids": [
+    "J01",
+    "J02",
+    "J03",
+    "J04",
+    "J05",
+    "J06",
+    "J07",
+    "J08",
+    "J09",
+    "J10",
+    "J11",
+    "J12",
+    "J13",
+    "J14",
+    "J15",
+    "J16",
+    "J17",
+    "J18",
+    "J19",
+    "J20"
+  ],
+  "preflight": {
+    "demo": {
+      "available": true,
+      "reason": "Built-in rule baseline"
+    },
+    "gemini": {
+      "available": false,
+      "reason": "GEMINI_API_KEY is not set; no live request made."
+    },
+    "openai": {
+      "available": false,
+      "reason": "An exact model identifier must be supplied."
+    },
+    "ollama": {
+      "available": false,
+      "reason": "An exact model identifier must be supplied."
+    }
+  },
+  "allow_live": false,
+  "max_cloud_requests": 1,
+  "max_output_tokens": 2048,
+  "request_timeout_seconds": 60,
+  "retries": 0,
+  "environment": {
+    "python": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\rhyne\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "openai": null,
+      "google-genai": null
+    },
+    "java": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"23.0.1\" 2024-10-15\nOpenJDK Runtime Environment (build 23.0.1+11-39)\nOpenJDK 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)\n",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-version"
+      ],
+      "seconds": 0.1554372999817133
+    },
+    "javac": {
+      "returncode": 0,
+      "stdout": "javac 23.0.1\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "javac",
+        "-version"
+      ],
+      "seconds": 0.2900387000408955
+    },
+    "java_path": "C:\\Users\\rhyne\\.jdks\\openjdk-23.0.1\\bin\\java.EXE",
+    "javac_path": "C:\\Users\\rhyne\\.jdks\\openjdk-23.0.1\\bin\\javac.EXE"
+  },
+  "generation_settings": {
+    "gemini": {
+      "temperature": 0
+    },
+    "openai": {
+      "sampling": "provider default (model-dependent)"
+    },
+    "ollama": {
+      "temperature": 0,
+      "seed": 365
+    }
+  },
+  "legacy_output_hint": null,
+  "purpose": "live_or_local_benchmark"
+}

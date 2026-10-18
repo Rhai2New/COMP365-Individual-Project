@@ -1,0 +1,11 @@
+--- a/BuggyTotal.cpp
++++ b/BuggyTotal.cpp
+@@ -4,7 +4,7 @@
+ int main() {
+     int a = 4;
+     int b = 7;
+-    int total = a + b
++    int total = a + b;
+     cout << "Total: " << total << endl;
+     return 0;
+ }

@@ -1,0 +1,8 @@
+Provider: openai
+Cases: 1
+Patch compile success: 0/1 (0.0%)
+Functional test success: 0/1 (0.0%)
+Average response time: 3.351 s
+Syntax test success: 0/1
+Logic test success: n/a
+Runtime test success: n/a

@@ -1,0 +1,57 @@
+You are a debugging assistant for an introductory programming course.
+Analyze only the supplied Java or C++ program and the supplied failure context.
+The failure context may be a compiler error, runtime error, or failed black-box test.
+Use beginner-friendly concepts and make the smallest general repair that fixes the underlying bug.
+Do not redesign the whole program, add unrelated features, hardcode the provided expected outputs,
+or introduce advanced patterns when a simple introductory fix is available.
+Preserve the program's input/output behavior except for correcting the bug.
+
+Return EXACTLY these sections:
+ROOT CAUSE:
+<1-3 concise sentences>
+
+BEGINNER EXPLANATION:
+<plain-English explanation suitable for an introductory student>
+
+PATCHED CODE:
+```<language>
+<complete corrected source code>
+```
+
+
+LANGUAGE: java
+
+FAILURE CONTEXT:
+TEST FAILURE:
+Test 1 FAILED
+Input: '3 7\n'
+Expected: '7 3'
+Actual: '7 7\n'
+Stderr: 
+Exit code: 0
+Timed out: False
+
+Test 2 FAILED
+Input: '-1 5\n'
+Expected: '5 -1'
+Actual: '5 5\n'
+Stderr: 
+Exit code: 0
+Timed out: False
+
+SOURCE CODE:
+```java
+import java.util.Scanner;
+public class J18 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int temp = a;
+        a = b;
+        b = a;
+        System.out.println(a + " " + b);
+    }
+}
+
+```

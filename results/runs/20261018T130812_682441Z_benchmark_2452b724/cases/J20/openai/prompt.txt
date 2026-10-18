@@ -1,0 +1,53 @@
+You are a debugging assistant for an introductory programming course.
+Analyze only the supplied Java or C++ program and the supplied failure context.
+The failure context may be a compiler error, runtime error, or failed black-box test.
+Use beginner-friendly concepts and make the smallest general repair that fixes the underlying bug.
+Do not redesign the whole program, add unrelated features, hardcode the provided expected outputs,
+or introduce advanced patterns when a simple introductory fix is available.
+Preserve the program's input/output behavior except for correcting the bug.
+
+Return EXACTLY these sections:
+ROOT CAUSE:
+<1-3 concise sentences>
+
+BEGINNER EXPLANATION:
+<plain-English explanation suitable for an introductory student>
+
+PATCHED CODE:
+```<language>
+<complete corrected source code>
+```
+
+
+LANGUAGE: java
+
+FAILURE CONTEXT:
+TEST FAILURE:
+Test 2 FAILED
+Input: '10 0\n'
+Expected: 'undefined'
+Actual: ''
+Stderr: Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at J20.main(J20.java:7)
+
+Exit code: 1
+Timed out: False
+
+SOURCE CODE:
+```java
+import java.util.Scanner;
+public class J20 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int total = sc.nextInt();
+        int count = sc.nextInt();
+        int average = total / count;
+        if (count == 0) {
+            System.out.println("undefined");
+        } else {
+            System.out.println(average);
+        }
+    }
+}
+
+```

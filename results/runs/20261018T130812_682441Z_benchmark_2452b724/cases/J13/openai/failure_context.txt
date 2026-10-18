@@ -1,0 +1,8 @@
+TEST FAILURE:
+Test 1 FAILED
+Input: '3 -5 -2 -9\n'
+Expected: '-2'
+Actual: '0\n'
+Stderr: 
+Exit code: 0
+Timed out: False

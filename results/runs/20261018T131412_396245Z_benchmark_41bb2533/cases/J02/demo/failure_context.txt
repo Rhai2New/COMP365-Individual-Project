@@ -1,0 +1,5 @@
+COMPILER ERROR:
+J02.java:4: error: ')' or ',' expected
+        System.out.println(x * 2;
+                                ^
+1 error

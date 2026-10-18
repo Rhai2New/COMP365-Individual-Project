@@ -1,0 +1,23 @@
+Recommended commit sequence
+
+1. Commit your existing Checkpoint 1 state before copying the Checkpoint 2 files:
+   git init
+   git add .
+   git commit -m "Checkpoint 1 baseline"
+
+2. Create an empty GitHub repository named COMP365-Individual-Project, then connect it:
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/COMP365-Individual-Project.git
+   git push -u origin main
+
+3. Copy the Checkpoint 2 files into the repo, then:
+   git add .
+   git commit -m "Add Checkpoint 2 benchmark and evaluation harness"
+   git push
+
+4. After the live benchmark results are generated:
+   git add results/checkpoint2_results.csv results/checkpoint2_summary.txt
+   git commit -m "Add Checkpoint 2 benchmark results"
+   git push
+
+Never commit an API key. .gitignore excludes .env and virtual environments.

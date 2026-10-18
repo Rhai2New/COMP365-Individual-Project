@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T153859_032470Z_benchmark_60bcc2f4",
+  "case_id": "J16",
+  "source": "J16.java",
+  "language": "java",
+  "bug_type": "logic:wrong_accumulator",
+  "category": "logic",
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "resolved_model": null,
+  "status": "configuration_unavailable",
+  "request_made": false,
+  "response_received": false,
+  "repair_attempted": false,
+  "patch_changed_source": null,
+  "patch_compile_success": null,
+  "visible_test_success": null,
+  "hidden_test_success": null,
+  "test_success": null,
+  "response_seconds": null,
+  "error": "Gemini billing tier unverified; no generation request made (free-tier-only policy)",
+  "artifact_dir": "cases/J16/gemini"
+}

@@ -1,0 +1,19 @@
+ROOT CAUSE:
+A statement appears to be missing its terminating semicolon.
+
+BEGINNER EXPLANATION:
+The baseline added a semicolon to the first matching statement.
+
+PATCHED CODE:
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 4;
+    int b = 7;
+    int total = a + b;
+    cout << "Total: " << total << endl;
+    return 0;
+}
+```

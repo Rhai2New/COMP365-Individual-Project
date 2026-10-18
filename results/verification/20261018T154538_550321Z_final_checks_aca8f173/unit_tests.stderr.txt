@@ -1,0 +1,27 @@
+test_api_error_and_invalid_not_repairs (test_evaluation.EvaluationTests.test_api_error_and_invalid_not_repairs) ... ok
+test_child_process_does_not_receive_api_key (test_evaluation.EvaluationTests.test_child_process_does_not_receive_api_key) ... ok
+test_circuit_breaker_makes_only_one_failed_api_call (test_evaluation.EvaluationTests.test_circuit_breaker_makes_only_one_failed_api_call) ... ok
+test_cloud_sdk_request_contracts_without_network (test_evaluation.EvaluationTests.test_cloud_sdk_request_contracts_without_network) ... ok
+test_compilation_failure_is_distinct (test_evaluation.EvaluationTests.test_compilation_failure_is_distinct) ... ok
+test_error_classification (test_evaluation.EvaluationTests.test_error_classification) ... ok
+test_explicit_denominators (test_evaluation.EvaluationTests.test_explicit_denominators) ... ok
+test_hidden_output_not_in_prompt (test_evaluation.EvaluationTests.test_hidden_output_not_in_prompt) ... ok
+test_patch_parser_rejects_empty_and_malformed (test_evaluation.EvaluationTests.test_patch_parser_rejects_empty_and_malformed) ... ok
+test_process_timeout (test_evaluation.EvaluationTests.test_process_timeout) ... ok
+test_reference_control_is_not_baseline (test_evaluation.EvaluationTests.test_reference_control_is_not_baseline) ... ok
+test_twenty_cases_oracles_and_split (test_evaluation.EvaluationTests.test_twenty_cases_oracles_and_split) ... ok
+test_unique_runs_and_no_overwrite (test_evaluation.EvaluationTests.test_unique_runs_and_no_overwrite) ... ok
+test_unverified_billing_prevents_generation (test_evaluation.EvaluationTests.test_unverified_billing_prevents_generation) ... ok
+test_wrong_compiling_program_fails_hidden_tests (test_evaluation.EvaluationTests.test_wrong_compiling_program_fails_hidden_tests) ... ok
+test_modified_patch_rejected_without_relying_on_hashes (test_integrity.IntegrityTests.test_modified_patch_rejected_without_relying_on_hashes) ... ok
+test_rating_model_identity_is_verified (test_integrity.IntegrityTests.test_rating_model_identity_is_verified) ... ok
+test_split_success_cannot_drift_from_process_records (test_integrity.IntegrityTests.test_split_success_cannot_drift_from_process_records) ... ok
+test_cases_and_static_routes (test_review.ReviewTests.test_cases_and_static_routes) ... ok
+test_cross_origin_and_cloud_generation_rejected (test_review.ReviewTests.test_cross_origin_and_cloud_generation_rejected) ... ok
+test_edit_retest_preserves_source_and_experiment (test_review.ReviewTests.test_edit_retest_preserves_source_and_experiment) ... ok
+test_saved_replay_keeps_exact_response (test_review.ReviewTests.test_saved_replay_keeps_exact_response) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 21.136s
+
+OK

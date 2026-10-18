@@ -1,0 +1,22 @@
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J19 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int min = a;
+        if (b > min) {
+            min = b;
+        }
+        System.out.println(min);
+    }
+}
+```

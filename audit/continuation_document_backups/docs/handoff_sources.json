@@ -1,0 +1,7 @@
+{
+  "primary_run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+  "control_validation": "results/validation/20261018T131002_378932Z_benchmark_controls_8446b998/summary.json",
+  "verification": "results/verification/20261018T132107_618099Z_final_checks_468525eb/verification.json",
+  "explanation_ratings": "results/explanation_reviews/20261018T132222_582045Z_scored_f320519e/summary.json",
+  "historical_audit": "results/historical_audits/20261018T131533_028957Z_csv_inventory_cfdd9606/summary.json"
+}

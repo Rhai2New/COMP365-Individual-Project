@@ -1,0 +1,19 @@
+ROOT CAUSE: The program is attempting to divide by zero, which is undefined in Java.
+BEGINNER EXPLANATION: The program is attempting to divide two integers, `total` and `count`, and then divide the result by `count`. However, if `count` is zero, the program will throw an `ArithmeticException`. To fix this, we need to check if `count` is zero before performing the division.
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J20 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int total = sc.nextInt();
+        int count = sc.nextInt();
+        if (count == 0) {
+            System.out.println("undefined");
+        } else {
+            int average = total / count;
+            System.out.println(average);
+        }
+    }
+}
+```

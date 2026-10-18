@@ -1,0 +1,39 @@
+CASE: J03
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: syntax:missing_brace
+
+FAILURE CONTEXT
+------------------------------------------------------------
+COMPILER ERROR:
+J03.java:7: error: reached end of file while parsing
+}
+ ^
+1 error
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+public class J03 {
+    public static void main(String[] args) {
+        int x = 3;
+        if (x > 0) {
+            System.out.println("positive");
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+COMPILER ERROR:
+J03.java:7: error: reached end of file while parsing
+}
+ ^
+1 error

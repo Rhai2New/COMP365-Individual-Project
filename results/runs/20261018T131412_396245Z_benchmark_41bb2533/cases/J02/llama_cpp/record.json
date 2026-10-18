@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T131412_396245Z_benchmark_41bb2533",
+  "case_id": "J02",
+  "source": "J02.java",
+  "language": "java",
+  "bug_type": "syntax:missing_parenthesis",
+  "category": "syntax",
+  "provider": "llama_cpp",
+  "model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "resolved_model": "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M",
+  "status": "successful_repair",
+  "request_made": true,
+  "response_received": true,
+  "repair_attempted": true,
+  "patch_changed_source": true,
+  "patch_compile_success": true,
+  "visible_test_success": true,
+  "hidden_test_success": true,
+  "test_success": true,
+  "response_seconds": 3.2689065000158735,
+  "error": null,
+  "artifact_dir": "cases/J02/llama_cpp"
+}

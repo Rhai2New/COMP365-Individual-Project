@@ -1,0 +1,11 @@
+--- a/J16.java
++++ b/J16.java
+@@ -6,7 +6,7 @@
+         int product = 1;
+         for (int i = 0; i < n; i++) {
+             int value = sc.nextInt();
+-            product += value;
++            product *= value;
+         }
+         System.out.println(product);
+     }

@@ -1,0 +1,19 @@
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+public class J12 {
+    public static void main(String[] args) {
+        int[] values = {2, 4, 6};
+        int total = 0;
+        for (int i = 0; i <= values.length; i++) {
+            total += values[i];
+        }
+        System.out.println(total);
+    }
+}
+```

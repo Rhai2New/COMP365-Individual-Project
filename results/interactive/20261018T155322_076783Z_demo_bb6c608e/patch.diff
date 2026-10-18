@@ -1,0 +1,10 @@
+--- a/BuggyGreeting.java
++++ b/BuggyGreeting.java
+@@ -1,6 +1,6 @@
+ public class BuggyGreeting {
+     public static void main(String[] args) {
+         String name = "Aggie";
+-        System.out.println("Hello, " + name)
++        System.out.println("Hello, " + name);
+     }
+ }

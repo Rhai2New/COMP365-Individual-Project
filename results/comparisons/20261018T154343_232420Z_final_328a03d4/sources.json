@@ -1,0 +1,19 @@
+{
+  "sources": {
+    "demo": {
+      "run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+      "seal_sha256": "32a2ce981a89cfdcdd6fef340cfc8c5fb3782d3b32d7c5b116ef49a213d226a1"
+    },
+    "llama_cpp": {
+      "run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+      "seal_sha256": "32a2ce981a89cfdcdd6fef340cfc8c5fb3782d3b32d7c5b116ef49a213d226a1"
+    },
+    "gemini": {
+      "run": "results/runs/20261018T153859_032470Z_benchmark_60bcc2f4",
+      "seal_sha256": "55b62757859605dbaa0da650d9672703022e67721bcd849bd2fcfbfc98d24c13"
+    }
+  },
+  "identical_source_prompt_tests_verified": true,
+  "comparison_note": "Gemini is configured but unevaluated. Its model ID is unverified; no generation requests.",
+  "excluded": "Historical claims, authored controls, replays, UI edits, duplicate runs"
+}

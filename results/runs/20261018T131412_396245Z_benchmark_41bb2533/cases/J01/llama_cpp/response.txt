@@ -1,0 +1,13 @@
+ROOT CAUSE: The compiler is expecting a semicolon after the `System.out.println` statement, but it found a semicolon instead.
+
+BEGINNER EXPLANATION:
+The error message indicates that the compiler is expecting a semicolon after the `System.out.println` statement, but it found a semicolon instead. This is a common mistake when writing Java code, especially when using the `System.out.println` statement.
+
+PATCHED CODE:
+```java
+public class J01 {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+```

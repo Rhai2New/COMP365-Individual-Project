@@ -1,0 +1,85 @@
+{
+  "compilation": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J04.java"
+    ],
+    "seconds": 0.681355300010182,
+    "success": true
+  },
+  "tests": [
+    {
+      "returncode": 0,
+      "stdout": "7\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J04"
+      ],
+      "seconds": 0.1047223000205122,
+      "index": 1,
+      "test_id": "visible_1",
+      "split": "visible",
+      "input": "",
+      "expected": "7",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "7\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J04"
+      ],
+      "seconds": 0.09456060000229627,
+      "index": 2,
+      "test_id": "hidden_1",
+      "split": "hidden",
+      "input": "unused input\n",
+      "expected": "7",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "7\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J04"
+      ],
+      "seconds": 0.09335000003920868,
+      "index": 3,
+      "test_id": "hidden_2",
+      "split": "hidden",
+      "input": "99\n",
+      "expected": "7",
+      "success": true
+    }
+  ],
+  "infrastructure_error": null,
+  "functional_success": true
+}

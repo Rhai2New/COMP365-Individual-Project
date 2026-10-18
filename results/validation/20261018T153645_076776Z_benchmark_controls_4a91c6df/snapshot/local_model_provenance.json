@@ -1,0 +1,16 @@
+{
+  "downloaded_utc": "2026-10-18T13:12:55.544565+00:00",
+  "model_repository": "Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF",
+  "model_revision": "ebb2015119c907b064c512bf053e945850b5875f",
+  "model_filename": "qwen2.5-coder-0.5b-instruct-q4_k_m.gguf",
+  "quantization": "Q4_K_M",
+  "model_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF/resolve/ebb2015119c907b064c512bf053e945850b5875f/qwen2.5-coder-0.5b-instruct-q4_k_m.gguf",
+  "model_sha256": "1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32",
+  "model_size_bytes": 491400064,
+  "llama_cpp_tag": "b11719",
+  "binary_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11719/llama-b11719-bin-win-cpu-x64.zip",
+  "archive_sha256": "1b1234d208a8b851cc27cd3d96b850d1547a4e5cfc5cd75f0a9fdd1d4c5bea20",
+  "server_sha256": "86acb3118f9b8ebe206c73a16a8112200388b39fed1355aa6c8ff9e9fb266f20",
+  "model_license": "Apache-2.0 (see official model repository)",
+  "binary_license": "MIT (see llama.cpp repository)"
+}

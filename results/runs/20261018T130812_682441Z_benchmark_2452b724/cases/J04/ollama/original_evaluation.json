@@ -1,0 +1,21 @@
+{
+  "compilation": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "J04.java:3: error: ';' expected\n        int total == 7;\n                 ^\n1 error\n",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J04.java"
+    ],
+    "seconds": 0.5920636000228114,
+    "success": false
+  },
+  "tests": [],
+  "infrastructure_error": null,
+  "functional_success": false
+}

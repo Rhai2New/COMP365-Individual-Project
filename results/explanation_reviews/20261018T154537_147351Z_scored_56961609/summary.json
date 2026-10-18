@@ -1,0 +1,26 @@
+[
+  {
+    "provider": "demo",
+    "rater": "Codex preliminary technical review (2026-10-18)",
+    "rater_type": "AI_assisted",
+    "rated_responses": 20,
+    "available_responses": 20,
+    "root_cause_accuracy": 0.1,
+    "repair_reasoning": 0.05,
+    "beginner_clarity": 2.0,
+    "case_specificity": 0.05,
+    "mean_total_out_of_8": 2.2
+  },
+  {
+    "provider": "llama_cpp",
+    "rater": "Codex preliminary technical review (2026-10-18)",
+    "rater_type": "AI_assisted",
+    "rated_responses": 20,
+    "available_responses": 20,
+    "root_cause_accuracy": 0.25,
+    "repair_reasoning": 0.1,
+    "beginner_clarity": 0.8,
+    "case_specificity": 0.75,
+    "mean_total_out_of_8": 1.9
+  }
+]

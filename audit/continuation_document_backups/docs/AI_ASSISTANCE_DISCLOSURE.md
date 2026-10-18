@@ -1,0 +1,7 @@
+# Technical AI assistance record
+
+On October 18, 2026, Codex assisted with the technical artifact in the existing project workspace. Assistance included inspecting the existing local/GitHub implementations, restoring the existing Gemini integration, extending evidence preservation, adding provider/error classification and generated summaries, authoring held-out tests and harness controls, setting up and evaluating an actual local Qwen model, creating regression checks, verifying dependencies, and writing repository usage/methodology documentation.
+
+The existing narrow rule-based baseline and 20 Java benchmark sources were preserved. Authored reference repairs are explicitly labeled harness controls; they are not model outputs. Runtime/API responses and measurements are saved as generated, with no invented live Gemini/OpenAI results. Any explanation ratings labeled AI_assisted are preliminary AI judgments, not human evaluations.
+
+No research-paper prose was generated, rewritten, or polished as part of this work. Existing related-work notes and any student paper were not edited. The student is responsible for reading the source evidence, independently checking the results and ratings, writing the RED/no-AI paper, and following the course's disclosure and submission requirements. This technical record does not imply that AI-assisted documentation may be copied into the paper.

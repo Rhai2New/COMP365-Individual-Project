@@ -1,0 +1,366 @@
+[
+  {
+    "case_id": "J01",
+    "language": "java",
+    "bug_type": "syntax:semicolon",
+    "difficulty": "easy",
+    "title": "Missing semicolon",
+    "source": "J01.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Hello"
+      }
+    ]
+  },
+  {
+    "case_id": "J02",
+    "language": "java",
+    "bug_type": "syntax:missing_parenthesis",
+    "difficulty": "easy",
+    "title": "Missing closing parenthesis",
+    "source": "J02.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "",
+        "expected": "8"
+      }
+    ]
+  },
+  {
+    "case_id": "J03",
+    "language": "java",
+    "bug_type": "syntax:missing_brace",
+    "difficulty": "easy",
+    "title": "Missing closing brace",
+    "source": "J03.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "",
+        "expected": "positive"
+      }
+    ]
+  },
+  {
+    "case_id": "J04",
+    "language": "java",
+    "bug_type": "syntax:wrong_assignment",
+    "difficulty": "easy",
+    "title": "Uses comparison operator in declaration",
+    "source": "J04.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "",
+        "expected": "7"
+      }
+    ]
+  },
+  {
+    "case_id": "J05",
+    "language": "java",
+    "bug_type": "logic:wrong_operator",
+    "difficulty": "easy",
+    "title": "Addition implemented as subtraction",
+    "source": "J05.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "7 5\n",
+        "expected": "12"
+      },
+      {
+        "input": "-2 9\n",
+        "expected": "7"
+      }
+    ]
+  },
+  {
+    "case_id": "J06",
+    "language": "java",
+    "bug_type": "logic:off_by_one",
+    "difficulty": "medium",
+    "title": "Loop excludes final value",
+    "source": "J06.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "5\n",
+        "expected": "15"
+      },
+      {
+        "input": "1\n",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "case_id": "J07",
+    "language": "java",
+    "bug_type": "logic:wrong_comparison",
+    "difficulty": "easy",
+    "title": "Maximum comparison reversed",
+    "source": "J07.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "3 9\n",
+        "expected": "9"
+      },
+      {
+        "input": "10 -4\n",
+        "expected": "10"
+      }
+    ]
+  },
+  {
+    "case_id": "J08",
+    "language": "java",
+    "bug_type": "logic:parity_reversed",
+    "difficulty": "easy",
+    "title": "Even and odd outputs reversed",
+    "source": "J08.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "8\n",
+        "expected": "even"
+      },
+      {
+        "input": "5\n",
+        "expected": "odd"
+      }
+    ]
+  },
+  {
+    "case_id": "J09",
+    "language": "java",
+    "bug_type": "logic:integer_division",
+    "difficulty": "medium",
+    "title": "Integer division loses decimal",
+    "source": "J09.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "5 2\n",
+        "expected": "3.5"
+      },
+      {
+        "input": "2 4\n",
+        "expected": "3.0"
+      }
+    ]
+  },
+  {
+    "case_id": "J10",
+    "language": "java",
+    "bug_type": "logic:string_equality",
+    "difficulty": "medium",
+    "title": "String comparison uses reference equality",
+    "source": "J10.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "yes\n",
+        "expected": "accepted"
+      },
+      {
+        "input": "no\n",
+        "expected": "rejected"
+      }
+    ]
+  },
+  {
+    "case_id": "J11",
+    "language": "java",
+    "bug_type": "logic:boolean_operator",
+    "difficulty": "medium",
+    "title": "Impossible range check uses AND",
+    "source": "J11.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "-1\n",
+        "expected": "invalid"
+      },
+      {
+        "input": "150\n",
+        "expected": "invalid"
+      },
+      {
+        "input": "20\n",
+        "expected": "valid"
+      }
+    ]
+  },
+  {
+    "case_id": "J12",
+    "language": "java",
+    "bug_type": "runtime:array_bound",
+    "difficulty": "medium",
+    "title": "Array loop goes one index too far",
+    "source": "J12.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "",
+        "expected": "12"
+      }
+    ]
+  },
+  {
+    "case_id": "J13",
+    "language": "java",
+    "bug_type": "logic:max_initialization",
+    "difficulty": "medium",
+    "title": "Maximum initialized incorrectly for negatives",
+    "source": "J13.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "3 -5 -2 -9\n",
+        "expected": "-2"
+      },
+      {
+        "input": "4 1 8 3 2\n",
+        "expected": "8"
+      }
+    ]
+  },
+  {
+    "case_id": "J14",
+    "language": "java",
+    "bug_type": "logic:area_formula",
+    "difficulty": "easy",
+    "title": "Rectangle area uses addition",
+    "source": "J14.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "4 5\n",
+        "expected": "20"
+      },
+      {
+        "input": "2 9\n",
+        "expected": "18"
+      }
+    ]
+  },
+  {
+    "case_id": "J15",
+    "language": "java",
+    "bug_type": "logic:counter_update",
+    "difficulty": "medium",
+    "title": "Counter decrements instead of increments",
+    "source": "J15.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "5 -1 2 0 3 4\n",
+        "expected": "3"
+      },
+      {
+        "input": "3 -2 -1 0\n",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "case_id": "J16",
+    "language": "java",
+    "bug_type": "logic:wrong_accumulator",
+    "difficulty": "medium",
+    "title": "Product accumulator uses addition",
+    "source": "J16.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "3 2 3 4\n",
+        "expected": "24"
+      },
+      {
+        "input": "2 5 1\n",
+        "expected": "5"
+      }
+    ]
+  },
+  {
+    "case_id": "J17",
+    "language": "java",
+    "bug_type": "logic:boundary_condition",
+    "difficulty": "medium",
+    "title": "Passing boundary excludes exact cutoff",
+    "source": "J17.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "60\n",
+        "expected": "pass"
+      },
+      {
+        "input": "59\n",
+        "expected": "fail"
+      }
+    ]
+  },
+  {
+    "case_id": "J18",
+    "language": "java",
+    "bug_type": "logic:swap_assignment",
+    "difficulty": "medium",
+    "title": "Swap overwrites saved value",
+    "source": "J18.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "3 7\n",
+        "expected": "7 3"
+      },
+      {
+        "input": "-1 5\n",
+        "expected": "5 -1"
+      }
+    ]
+  },
+  {
+    "case_id": "J19",
+    "language": "java",
+    "bug_type": "logic:minimum_comparison",
+    "difficulty": "medium",
+    "title": "Minimum comparison reversed",
+    "source": "J19.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "3 9\n",
+        "expected": "3"
+      },
+      {
+        "input": "10 -4\n",
+        "expected": "-4"
+      }
+    ]
+  },
+  {
+    "case_id": "J20",
+    "language": "java",
+    "bug_type": "runtime:division_by_zero",
+    "difficulty": "medium",
+    "title": "Division happens before zero check",
+    "source": "J20.java",
+    "origin": "Curated COMP 365 micro-benchmark case",
+    "tests": [
+      {
+        "input": "10 2\n",
+        "expected": "5"
+      },
+      {
+        "input": "10 0\n",
+        "expected": "undefined"
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T130812_682441Z_benchmark_2452b724",
+  "case_id": "J09",
+  "source": "J09.java",
+  "language": "java",
+  "bug_type": "logic:integer_division",
+  "category": "logic",
+  "provider": "openai",
+  "model": null,
+  "resolved_model": null,
+  "status": "configuration_unavailable",
+  "request_made": false,
+  "response_received": false,
+  "repair_attempted": false,
+  "patch_changed_source": null,
+  "patch_compile_success": null,
+  "visible_test_success": null,
+  "hidden_test_success": null,
+  "test_success": null,
+  "response_seconds": null,
+  "error": "An exact model identifier must be supplied.",
+  "artifact_dir": "cases/J09/openai"
+}

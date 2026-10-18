@@ -1,0 +1,9 @@
+--- a/J03.java
++++ b/J03.java
+@@ -3,5 +3,6 @@
+         int x = 3;
+         if (x > 0) {
+             System.out.println("positive");
++        }
+     }
+ }

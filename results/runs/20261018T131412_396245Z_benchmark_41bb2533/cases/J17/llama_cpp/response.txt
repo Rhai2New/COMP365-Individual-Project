@@ -1,0 +1,19 @@
+ROOT CAUSE: The program is attempting to read an integer input from the user, but it is not handling any input validation or error checking. The program is simply printing "pass" or "fail" based on the input score, which is not a valid input for a program that expects a numeric input.
+
+BEGINNER EXPLANATION: The program is attempting to read an integer input from the user, but it is not handling any input validation or error checking. The program is simply printing "pass" or "fail" based on the input score, which is not a valid input for a program that expects a numeric input.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J17 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int score = sc.nextInt();
+        if (score > 60) {
+            System.out.println("pass");
+        } else {
+            System.out.println("fail");
+        }
+    }
+}
+```

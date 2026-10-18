@@ -1,0 +1,9 @@
+--- a/J01.java
++++ b/J01.java
+@@ -1,5 +1,5 @@
+ public class J01 {
+     public static void main(String[] args) {
+-        System.out.println("Hello")
++        System.out.println("Hello");
+     }
+ }

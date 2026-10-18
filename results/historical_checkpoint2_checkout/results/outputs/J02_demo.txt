@@ -1,0 +1,38 @@
+CASE: J02
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: syntax:missing_parenthesis
+
+FAILURE CONTEXT
+------------------------------------------------------------
+COMPILER ERROR:
+J02.java:4: error: ')' or ',' expected
+        System.out.println(x * 2;
+                                ^
+1 error
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+public class J02 {
+    public static void main(String[] args) {
+        int x = 4;
+        System.out.println(x * 2;
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+COMPILER ERROR:
+J02.java:4: error: ')' or ',' expected
+        System.out.println(x * 2;
+                                ^
+1 error

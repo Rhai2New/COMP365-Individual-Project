@@ -1,0 +1,5 @@
+{
+  "provider": "demo",
+  "model": "local-rule-baseline-v1",
+  "text": "ROOT CAUSE:\nThe local rule-based baseline could not identify this bug with its small rule set.\n\nBEGINNER EXPLANATION:\nThis baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.\n\nPATCHED CODE:\n```java\nimport java.util.Scanner;\npublic class J19 {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        int min = a;\n        if (b > min) {\n            min = b;\n        }\n        System.out.println(min);\n    }\n}\n```"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "input": "10 2\n",
+    "expected": "5",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "10 0\n",
+    "expected": "undefined",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "0 0\n",
+    "expected": "undefined",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "-9 2\n",
+    "expected": "-4",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "9 -2\n",
+    "expected": "-4",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  },
+  {
+    "input": "0 3\n",
+    "expected": "0",
+    "split": "hidden",
+    "test_id": "hidden_4"
+  }
+]

@@ -1,0 +1,3 @@
+# Preserve exact response, prompt, source snapshot, and hash-manifest bytes.
+# Disabling EOL conversion also keeps archives/checkouts reproducible on Windows.
+* -text

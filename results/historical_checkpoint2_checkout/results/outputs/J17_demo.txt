@@ -1,0 +1,45 @@
+CASE: J17
+PROVIDER: demo
+MODEL: local-rule-baseline
+BUG TYPE: logic:boundary_condition
+
+FAILURE CONTEXT
+------------------------------------------------------------
+TEST FAILURE:
+Test 1 FAILED
+Input: 60
+Expected: 'pass'
+Actual: 'fail'
+Exit code: 0
+
+REPAIR RESPONSE
+------------------------------------------------------------
+ROOT CAUSE:
+The local rule-based baseline could not identify this bug with its small rule set.
+
+BEGINNER EXPLANATION:
+This baseline only contains a few hand-written syntax rules. It leaves the program unchanged when none of those rules match.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J17 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int score = sc.nextInt();
+        if (score > 60) {
+            System.out.println("pass");
+        } else {
+            System.out.println("fail");
+        }
+    }
+}
+```
+
+VALIDATION
+------------------------------------------------------------
+Test 1 FAILED
+Input: 60
+Expected: 'pass'
+Actual: 'fail'
+Exit code: 0

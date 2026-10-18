@@ -1,0 +1,19 @@
+CASE: J03
+PROVIDER: openai
+BUG TYPE: syntax:missing_brace
+
+FAILURE CONTEXT
+------------------------------------------------------------
+COMPILER ERROR:
+J03.java:7: error: reached end of file while parsing
+}
+ ^
+1 error
+
+REPAIR RESPONSE
+------------------------------------------------------------
+<no response>
+
+VALIDATION
+------------------------------------------------------------
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: AQ.Ab8RN*****************************************WnUA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

@@ -1,0 +1,127 @@
+{
+  "compilation": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false,
+    "execution_error": null,
+    "command": [
+      "javac",
+      "-encoding",
+      "UTF-8",
+      "-proc:none",
+      "J18.java"
+    ],
+    "seconds": 0.8110547999967821,
+    "success": true
+  },
+  "tests": [
+    {
+      "returncode": 0,
+      "stdout": "7 7\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.13190269999904558,
+      "index": 1,
+      "test_id": "visible_1",
+      "split": "visible",
+      "input": "3 7\n",
+      "expected": "7 3",
+      "success": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "5 5\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.15614710003137589,
+      "index": 2,
+      "test_id": "visible_2",
+      "split": "visible",
+      "input": "-1 5\n",
+      "expected": "5 -1",
+      "success": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "0 0\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.12671949999639764,
+      "index": 3,
+      "test_id": "hidden_1",
+      "split": "hidden",
+      "input": "0 0\n",
+      "expected": "0 0",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "-8 -8\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.1289031999767758,
+      "index": 4,
+      "test_id": "hidden_2",
+      "split": "hidden",
+      "input": "-3 -8\n",
+      "expected": "-8 -3",
+      "success": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "0 0\n",
+      "stderr": "",
+      "timed_out": false,
+      "execution_error": null,
+      "command": [
+        "java",
+        "-Xmx128m",
+        "-cp",
+        ".",
+        "J18"
+      ],
+      "seconds": 0.15022499999031425,
+      "index": 5,
+      "test_id": "hidden_3",
+      "split": "hidden",
+      "input": "5 0\n",
+      "expected": "0 5",
+      "success": false
+    }
+  ],
+  "infrastructure_error": null,
+  "functional_success": false
+}

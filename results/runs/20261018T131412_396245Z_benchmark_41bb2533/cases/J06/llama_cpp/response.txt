@@ -1,0 +1,20 @@
+ROOT CAUSE: The program is attempting to print the sum of numbers from 1 to n, but it is not correctly handling the input and output.
+
+BEGINNER EXPLANATION:
+The program is attempting to print the sum of numbers from 1 to n, but it is not correctly handling the input and output. The program is using the `Scanner` class to read the input and the `System.out.println` method to print the output. However, the program is not correctly handling the input and output.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+```

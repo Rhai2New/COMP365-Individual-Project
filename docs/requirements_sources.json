@@ -1,0 +1,24 @@
+{
+  "checked_date": "2026-10-18",
+  "proposal_title": "COMP 365 - Individual Project Proposal - Rhaiyn Newby",
+  "proposal_url": "https://docs.google.com/document/d/1r90jC-yk4t5z8vx2VfqlwlTklgsz-0PEWEe-juHo2XQ/edit",
+  "proposal_modified_time": "2026-09-06T12:54:32.905Z",
+  "selected_venue": "SIGCSE 2027 (ACM Technical Symposium on Computer Science Education)",
+  "proposal_targets": {
+    "public_dataset_cases": "50-100 Java/C++ cases from QuixBugs/Defects4J",
+    "web_interface": "view explanation, review/edit patch, apply/retest",
+    "latency": "under 4 seconds end to end",
+    "test_success": "over 75 percent"
+  },
+  "feedback_access": {
+    "proposal_drive_comments": 0,
+    "gmail_project_pope_search_results": 0,
+    "original_professor_feedback_text_available": false
+  },
+  "official_sources": [
+    "https://2027.sigcse-ts.acm.org/track/sigcse-ts-2027-Papers-1",
+    "https://ai.google.dev/gemini-api/docs/models",
+    "https://ai.google.dev/gemini-api/docs/billing",
+    "https://ai.google.dev/gemini-api/docs/rate-limits"
+  ]
+}

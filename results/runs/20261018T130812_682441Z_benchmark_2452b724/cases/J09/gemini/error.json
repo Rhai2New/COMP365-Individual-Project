@@ -1,0 +1,5 @@
+{
+  "status": "configuration_unavailable",
+  "message": "GEMINI_API_KEY is not set; no live request made.",
+  "request_made": false
+}

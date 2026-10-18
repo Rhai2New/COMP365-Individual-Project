@@ -1,0 +1,5 @@
+{
+  "status": "configuration_unavailable",
+  "message": "Gemini billing tier unverified; no generation request made (free-tier-only policy)",
+  "request_made": false
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "input": "3 2 3 4\n",
+    "expected": "24",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "2 5 1\n",
+    "expected": "5",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "0\n",
+    "expected": "1",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "3 -2 3 4\n",
+    "expected": "-24",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "3 0 5 9\n",
+    "expected": "0",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  }
+]

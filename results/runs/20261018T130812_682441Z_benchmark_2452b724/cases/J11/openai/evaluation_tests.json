@@ -1,0 +1,44 @@
+[
+  {
+    "input": "-1\n",
+    "expected": "invalid",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "150\n",
+    "expected": "invalid",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "20\n",
+    "expected": "valid",
+    "split": "visible",
+    "test_id": "visible_3"
+  },
+  {
+    "input": "0\n",
+    "expected": "valid",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "120\n",
+    "expected": "valid",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "121\n",
+    "expected": "invalid",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  },
+  {
+    "input": "-2\n",
+    "expected": "invalid",
+    "split": "hidden",
+    "test_id": "hidden_4"
+  }
+]
