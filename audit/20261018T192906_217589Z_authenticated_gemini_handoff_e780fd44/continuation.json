@@ -1,0 +1,22 @@
+{
+  "session": "results/gemini_sessions/20261018T191709_946022Z_staged_579ea3f4/session.json",
+  "previous_selection": {
+    "gemini_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+    "gemini_runs": [
+      "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+      "results/runs/20261018T165729_486199Z_benchmark_d3df46ae"
+    ],
+    "gemini_session": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/session.json",
+    "gemini_smoke_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+    "gemini_skipped_run": "results/runs/20261018T165729_486199Z_benchmark_d3df46ae",
+    "comparison": "results/comparisons/20261018T165842_557570Z_final_a1ed1438"
+  },
+  "selected_comparison": "results/comparisons/20261018T192905_212433Z_final_b6a6bbc3",
+  "availability": "The local .env key authenticated successfully. J01 passed compilation and all tests, then the staged helper automatically continued J02-J20 with at least 65-second request spacing and no retries. Gemini delivered 10/11 requests; 9 cases were skipped. Missing cases remain unevaluated. Requested model: gemini-3.8-flash; saved served identifier(s): gemini-3.8-flash. Quota failures: 0; service errors: 1; access errors: 0. The user personally confirmed Free Tier with billing disabled; billing was not enabled and no paid API calls were authorized. Earlier HTTP 400/blocked experiments remain historical and are excluded from this comparison.",
+  "served_versions": [
+    "gemini-3.8-flash"
+  ],
+  "credential_values_recorded": false,
+  "paper_written": false,
+  "pushed": false
+}

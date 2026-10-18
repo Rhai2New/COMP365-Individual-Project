@@ -1,0 +1,22 @@
+{
+  "checked_utc": "2026-10-18T19:25:00.934238+00:00",
+  "local_file_present": true,
+  "local_key_field_populated": true,
+  "configuration_valid": true,
+  "generation_authentication_verified": true,
+  "source_evidence": "results/gemini_sessions/20261018T191709_946022Z_staged_579ea3f4/runs/20261018T191710_229284Z_benchmark_876caa4e",
+  "case_id": "J01",
+  "requested_model": "gemini-3.8-flash",
+  "served_model_identifier": "gemini-3.8-flash",
+  "credentials_displayed_or_recorded": false,
+  "billing_authority": "User personally verified exact API project is Free Tier with billing disabled; no billing changes made",
+  "request_protocol": "J01 first, then 19; at least 65 seconds between starts; no retries; stop after API error",
+  "model_hash_matches_provenance": true,
+  "runtime_hash_matches_provenance": true,
+  "official_sources_rechecked": {
+    "model": "https://ai.google.dev/gemini-api/docs/models",
+    "free_standard_input_and_output": "https://ai.google.dev/gemini-api/docs/pricing",
+    "venue": "https://2027.sigcse-ts.acm.org/track/sigcse-ts-2027-Papers-1"
+  },
+  "venue_check": "SIGCSE 2027: ACM sigconf two-column US letter; 6 body pages plus 1 references-only; abstract <=250 words; reserved anonymous author blocks; June 26/July 3 conference deadlines already passed. Course instructions take precedence."
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "20261018T191710_229284Z_benchmark_876caa4e",
+  "case_id": "J01",
+  "source": "J01.java",
+  "language": "java",
+  "bug_type": "syntax:semicolon",
+  "category": "syntax",
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "resolved_model": "gemini-3.8-flash",
+  "status": "successful_repair",
+  "request_made": true,
+  "response_received": true,
+  "repair_attempted": true,
+  "patch_changed_source": true,
+  "patch_compile_success": true,
+  "visible_test_success": true,
+  "hidden_test_success": true,
+  "test_success": true,
+  "response_seconds": 6.179708999989089,
+  "error": null,
+  "artifact_dir": "cases/J01/gemini"
+}

@@ -1,0 +1,5 @@
+provider,model,category,scheduled_cases,requests_made,responses_received,repair_attempts,compile_successes,functional_successes,visible_test_successes,hidden_test_successes,split_test_denominator,service_availability_denominator,service_availability,compile_denominator,compile_success_rate,functional_denominator,functional_success_rate,functional_given_compile_denominator,functional_given_compile,functional_per_response_denominator,functional_per_response_rate,successful_response_seconds_n,mean_successful_response_seconds,request_seconds_n,mean_request_seconds,invalid_responses,api_quota_failures,api_service_errors,api_access_errors,unavailable_or_skipped,status_counts_json
+gemini,gemini-3.8-flash,all,1,1,1,1,1,1,1,1,1,1,1.0,1,1.0,1,1.0,1,1.0,1,1.0,1,6.179708999989089,1,6.179708999989089,0,0,0,0,0,"{""successful_repair"": 1}"
+gemini,gemini-3.8-flash,syntax,1,1,1,1,1,1,1,1,1,1,1.0,1,1.0,1,1.0,1,1.0,1,1.0,1,6.179708999989089,1,6.179708999989089,0,0,0,0,0,"{""successful_repair"": 1}"
+gemini,gemini-3.8-flash,logic,0,0,0,0,0,0,0,0,0,0,,0,,0,,0,,0,,0,,0,,0,0,0,0,0,{}
+gemini,gemini-3.8-flash,runtime,0,0,0,0,0,0,0,0,0,0,,0,,0,,0,,0,,0,,0,,0,0,0,0,0,{}

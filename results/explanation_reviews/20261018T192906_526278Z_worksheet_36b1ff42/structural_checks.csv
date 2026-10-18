@@ -1,0 +1,10 @@
+case_id,provider,root_section_present,beginner_section_present,explanation_words
+J02,gemini,True,True,42
+J03,gemini,True,True,54
+J04,gemini,True,True,66
+J05,gemini,True,True,44
+J06,gemini,True,True,57
+J07,gemini,True,True,60
+J08,gemini,True,True,80
+J09,gemini,True,True,72
+J10,gemini,True,True,59

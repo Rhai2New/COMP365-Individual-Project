@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.8-flash",
+  "free_tier_attested": true,
+  "automatic_retries": 0,
+  "smoke_response_delivered": true,
+  "runs": [
+    "results\\gemini_sessions\\20261018T191709_946022Z_staged_579ea3f4\\runs\\20261018T191710_229284Z_benchmark_876caa4e",
+    "results\\gemini_sessions\\20261018T191709_946022Z_staged_579ea3f4\\runs\\20261018T191824_916274Z_benchmark_b71c7f0b"
+  ],
+  "remaining_batch_exit_code": 0
+}

@@ -1,0 +1,11 @@
+--- a/J07.java
++++ b/J07.java
+@@ -5,7 +5,7 @@
+         int a = sc.nextInt();
+         int b = sc.nextInt();
+         int max = a;
+-        if (b < a) {
++        if (b > a) {
+             max = b;
+         }
+         System.out.println(max);

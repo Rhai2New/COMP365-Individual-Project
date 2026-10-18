@@ -1,0 +1,21 @@
+ROOT CAUSE:
+The loop condition `i < n` terminates the loop before adding `n` to `sum`, leading to an off-by-one error where the last number is omitted.
+
+BEGINNER EXPLANATION:
+The `for` loop uses the condition `i < n`, which stops executing as soon as `i` reaches `n`. Because of this, `n` is never added to `sum`. For example, when `n` is 5, it only adds 1, 2, 3, and 4. Changing the loop condition to `i <= n` ensures that `n` is included in the total.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+```

@@ -1,0 +1,24 @@
+{
+  "primary_run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
+  "control_validation": "results/validation/20261018T165844_248071Z_benchmark_controls_7705bc78/summary.json",
+  "verification": "results/verification/20261018T190459_681092Z_final_checks_5a692d7a/verification.json",
+  "explanation_ratings": "results/explanation_reviews/20261018T132222_582045Z_scored_f320519e/summary.json",
+  "historical_audit": "results/historical_audits/20261018T131533_028957Z_csv_inventory_cfdd9606/summary.json",
+  "gemini_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "comparison": "results/comparisons/20261018T165842_557570Z_final_a1ed1438",
+  "replay": "results/replays/20261018T170031_185640Z_saved_patches_653a8787/summary.json",
+  "human_worksheet": "results/explanation_reviews/20261018T154535_622694Z_worksheet_704dd1d7/ratings.csv",
+  "gemini_access": "results/api_preflight/20261018T153628_997812Z_gemini_metadata_5f7d6d26/preflight.json",
+  "git_preparation": "audit/20261018T154603_945210Z_git_preparation_b7c4855b",
+  "gemini_runs": [
+    "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+    "results/runs/20261018T165729_486199Z_benchmark_d3df46ae"
+  ],
+  "gemini_smoke_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
+  "gemini_skipped_run": "results/runs/20261018T165729_486199Z_benchmark_d3df46ae",
+  "gemini_session": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/session.json",
+  "gemini_diagnostics": "results/api_preflight/20261018T165611_492589Z_gemini_local_diagnostics_d5c6ce26/diagnostics.json",
+  "free_tier_authorization": "audit\\20261018T165842_192283Z_free_tier_followup_370e50f0\\authorization.json",
+  "previous_gemini_run": "results/runs/20261018T153859_032470Z_benchmark_60bcc2f4",
+  "local_auth_setup": "results/auth_setup/20261018T190540_800707Z_local_env_35b113ba/verification.json"
+}

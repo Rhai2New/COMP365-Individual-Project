@@ -157,7 +157,8 @@ def main() -> int:
         parser.error("Supply unique known providers: " + ",".join(PROVIDERS))
     if args.limit < 0 or args.max_requests < 0 or args.max_tokens < 1 or args.timeout <= 0 or args.gemini_min_interval < 0:
         parser.error("Limits must be nonnegative; tokens and timeout must be positive")
-    models = {**DEFAULT_MODELS, "openai": args.openai_model, "ollama": args.ollama_model,
+    models = {**DEFAULT_MODELS, "gemini": args.gemini_model,
+              "openai": args.openai_model, "ollama": args.ollama_model,
               "llama_cpp": args.llama_model}
     if args.model:
         llms = [p for p in providers if p != "demo"]

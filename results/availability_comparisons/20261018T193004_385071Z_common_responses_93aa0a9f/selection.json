@@ -1,0 +1,19 @@
+{
+  "source_comparison": "results/comparisons/20261018T192905_212433Z_final_b6a6bbc3",
+  "source_seal_sha256": "20f6b7b6bf4a1368a80151463ebe7b144f233bbcbd08333cb6a0fccb8a753243",
+  "case_ids": [
+    "J01",
+    "J02",
+    "J03",
+    "J04",
+    "J05",
+    "J06",
+    "J07",
+    "J08",
+    "J09",
+    "J10"
+  ],
+  "cases_per_system": 10,
+  "selection_rule": "Delivered response from every system; invalid delivered outputs included",
+  "limitation": "Conditional observed subset; excludes unavailable cases; not full-suite Gemini performance or a randomized subset"
+}

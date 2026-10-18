@@ -1,0 +1,32 @@
+[
+  {
+    "input": "3 7\n",
+    "expected": "7 3",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "-1 5\n",
+    "expected": "5 -1",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "0 0\n",
+    "expected": "0 0",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "-3 -8\n",
+    "expected": "-8 -3",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "5 0\n",
+    "expected": "0 5",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  }
+]

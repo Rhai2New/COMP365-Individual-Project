@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T191710_229284Z_benchmark_876caa4e,J01,J01.java,java,syntax:semicolon,syntax,gemini,gemini-3.8-flash,gemini-3.8-flash,successful_repair,True,True,True,True,True,True,True,True,6.179708999989089,,cases/J01/gemini

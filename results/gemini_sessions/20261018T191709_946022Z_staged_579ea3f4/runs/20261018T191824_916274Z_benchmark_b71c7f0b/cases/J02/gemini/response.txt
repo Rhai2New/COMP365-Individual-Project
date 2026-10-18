@@ -1,0 +1,15 @@
+ROOT CAUSE:
+The method call `System.out.println(x * 2;` is missing a closing parenthesis `)` before the semicolon.
+
+BEGINNER EXPLANATION:
+In Java, every opening parenthesis `(` must have a matching closing parenthesis `)`. When calling `System.out.println(...)`, you opened the argument list with `(`, but forgot to close it with `)` after `x * 2`. Adding the closing parenthesis fixes the syntax error.
+
+PATCHED CODE:
+```java
+public class J02 {
+    public static void main(String[] args) {
+        int x = 4;
+        System.out.println(x * 2);
+    }
+}
+```

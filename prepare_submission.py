@@ -98,6 +98,12 @@ def main() -> int:
         for comparison in sorted((extracted / 'results' / 'comparisons').iterdir()):
             verify_comparison(comparison, root=extracted)
             comparison_checks.append({'directory': comparison.name, 'passed': True})
+        for comparison in sorted((extracted / 'results' / 'availability_comparisons').glob('*')):
+            check = subprocess.run([sys.executable, 'compare_available_cases.py', '--check', str(comparison)],
+                cwd=extracted, capture_output=True, text=True, encoding='utf-8', errors='replace')
+            if check.returncode:
+                raise ValueError('Extracted common-response comparison reproduction failed: ' + check.stderr)
+            comparison_checks.append({'directory': comparison.name, 'passed': True})
         report = {"package": str(package), "sha256": sha256(package), "files": len(files),
                   "size_bytes": package.stat().st_size, "all_packaged_hashes_match": hash_ok,
                   "extracted_project_tests_exit_code": proc.returncode, "summary_checks": summary_checks,

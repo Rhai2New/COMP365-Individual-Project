@@ -33,17 +33,22 @@ The server binds to loopback, checks Host/Origin and JSON requests, and serves o
 |---|---|---|
 | `demo` | Unchanged `local-rule-baseline-v1` | 1/20 delivered responses passes all tests |
 | `llama_cpp` | Qwen2.5-Coder-0.5B-Instruct GGUF Q4_K_M | 9/20 passes all tests; 7 invalid outputs |
-| `gemini` | Requested `gemini-3.8-flash`; served version unknown | J01 HTTP 400; no response; J02-J20 skipped |
+| `gemini` | Requested `gemini-3.8-flash`; served `gemini-3.8-flash` | 10/10 delivered responses pass all tests; 0 invalid |
 | `openai`, `ollama` | Preserved optional adapters | Not evaluated |
 
-Evidence paths: [docs/handoff_sources.json](docs/handoff_sources.json). One Google models-metadata GET returned HTTP 400, without retry. The user has personally confirmed Free Tier with billing disabled. The staged J01 generation attempt returned HTTP 400 with no model response; the previous Windows user credential contained control characters. Local .env authentication is now installed, with an intentionally empty key field ready for one-time private entry. J02-J20 were skipped without requests. These are access limitations, not Gemini repair failures. The requested ID appears in [Google's model catalogue](https://ai.google.dev/gemini-api/docs/models); this does not prove account access or served version.
+Evidence paths: [docs/handoff_sources.json](docs/handoff_sources.json). The local .env key authenticated successfully. J01 passed compilation and all tests, then the staged helper automatically continued J02-J20 with at least 65-second request spacing and no retries. Gemini delivered 10/11 requests; 9 cases were skipped. Missing cases remain unevaluated. Requested model: gemini-3.8-flash; saved served identifier(s): gemini-3.8-flash. Quota failures: 0; service errors: 1; access errors: 0. The user personally confirmed Free Tier with billing disabled; billing was not enabled and no paid API calls were authorized. Earlier HTTP 400/blocked experiments remain historical and are excluded from this comparison.
+
+J11 returned HTTP 503 UNAVAILABLE (high demand), after 31.546709000 s, with no model response. J12-J20 were skipped without requests. No retry was made. Gemini response coverage is 10/20 scheduled cases; observed delivery is 10/11 submitted requests (90.91%). The ten missing repair outcomes are unevaluated, not model failures. Runtime repair results are unavailable for Gemini.
+
+Common J01-J10 all-test results: baseline 1/10, Qwen 5/10, Gemini 10/10. This observed subset excludes runtime cases and does not establish full-suite Gemini performance. See the data guide and `compare_available_cases.py`.
 
 ## Reproduce saved evidence without model calls
 
 ```powershell
 .\.venv\Scripts\python.exe summarize_results.py results\runs\20261018T131412_396245Z_benchmark_41bb2533 --check
 .\.venv\Scripts\python.exe replay_evidence.py results\runs\20261018T131412_396245Z_benchmark_41bb2533
-.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T165842_557570Z_final_a1ed1438
+.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T192905_212433Z_final_b6a6bbc3
+.\.venv\Scripts\python.exe compare_available_cases.py --check results\availability_comparisons\20261018T193004_385071Z_common_responses_93aa0a9f
 .\.venv\Scripts\python.exe finalize_results.py
 ```
 
@@ -61,9 +66,9 @@ Setup downloads pinned official Windows CPU llama.cpp b11719 and a 491 MB offici
 
 ## Gemini: persistent local authentication
 
-The application automatically reads `GEMINI_API_KEY` from `.env` beside `repair_providers.py`, independent of the terminal working directory. The local `.env` has been created with `GEMINI_API_KEY=` ready for one-time private entry. No terminal environment configuration or Windows variable changes are needed. An existing `.env` is authoritative, including an empty or invalid value, so stale Windows credentials cannot silently replace it. Only when the local file is absent does the adapter fall back to process/Windows variables. The parser supports plain or quoted single-line values and comments, without interpolation or executing commands; it loads only the Gemini key. `.env` and `.env.*` backups are excluded from Git and ZIPs; `.env.example` contains a placeholder only. Never put a key in commands, reports, source, or Git. In [AI Studio Projects](https://aistudio.google.com/projects), verify the exact key's project is Free Tier with billing disabled, its model is accessible, and quota remains. Public pricing does not prove account tier. References: [billing](https://ai.google.dev/gemini-api/docs/billing), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits).
+The application automatically reads `GEMINI_API_KEY` from `.env` beside `repair_providers.py`, independent of the terminal working directory. The user populated the local `.env`; its authentication was verified in the saved staged evaluation. No terminal environment configuration or Windows variable changes are needed. An existing `.env` is authoritative, including an empty or invalid value, so stale Windows credentials cannot silently replace it. Only when the local file is absent does the adapter fall back to process/Windows variables. The parser supports plain or quoted single-line values and comments, without interpolation or executing commands; it loads only the Gemini key. `.env` and `.env.*` backups are excluded from Git and ZIPs; `.env.example` contains a placeholder only. Never put a key in commands, reports, source, or Git. In [AI Studio Projects](https://aistudio.google.com/projects), verify the exact key's project is Free Tier with billing disabled, its model is accessible, and quota remains. Public pricing does not prove account tier. References: [billing](https://ai.google.dev/gemini-api/docs/billing), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits).
 
-On a fresh extraction or another machine, copy `.env.example` to `.env` and replace its placeholder once. The current workspace already has the empty local file. The user has already personally confirmed Free Tier with billing disabled. Once the local key field is filled, the existing command automatically loads it; no repeated credential configuration is required:
+On a fresh extraction or another machine, copy `.env.example` to `.env` and replace its placeholder once. The current workspace already has the populated private local file. The user has already personally confirmed Free Tier with billing disabled. The existing command automatically loads it; no repeated credential configuration is required:
 
 ```powershell
 .\.venv\Scripts\python.exe run_gemini_evaluation.py --model gemini-3.8-flash --free-tier-confirmed

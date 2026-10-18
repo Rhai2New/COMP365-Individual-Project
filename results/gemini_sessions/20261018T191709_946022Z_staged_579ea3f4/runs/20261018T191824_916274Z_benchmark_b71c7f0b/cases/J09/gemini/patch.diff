@@ -1,0 +1,11 @@
+--- a/J09.java
++++ b/J09.java
+@@ -4,7 +4,7 @@
+         Scanner sc = new Scanner(System.in);
+         int a = sc.nextInt();
+         int b = sc.nextInt();
+-        double average = (a + b) / 2;
++        double average = (a + b) / 2.0;
+         System.out.println(average);
+     }
+ }

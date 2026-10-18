@@ -1,0 +1,14 @@
+ROOT CAUSE:
+The `System.out.println("Hello")` statement on line 3 is missing a terminating semicolon (`;`).
+
+BEGINNER EXPLANATION:
+In Java, complete instructions (called statements) must end with a semicolon `;`, much like sentences in English end with a period. Adding a semicolon to the end of the `System.out.println("Hello")` line tells the compiler that the statement is finished.
+
+PATCHED CODE:
+```java
+public class J01 {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+```

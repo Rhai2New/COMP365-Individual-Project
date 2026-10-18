@@ -1,0 +1,16 @@
+TEST FAILURE:
+Test 1 FAILED
+Input: '7 5\n'
+Expected: '12'
+Actual: '2\n'
+Stderr: 
+Exit code: 0
+Timed out: False
+
+Test 2 FAILED
+Input: '-2 9\n'
+Expected: '7'
+Actual: '-11\n'
+Stderr: 
+Exit code: 0
+Timed out: False

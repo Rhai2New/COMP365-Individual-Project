@@ -1,0 +1,5 @@
+{
+  "provider": "demo",
+  "model": "local-rule-baseline-v1",
+  "text": "ROOT CAUSE:\nA statement appears to be missing its terminating semicolon.\n\nBEGINNER EXPLANATION:\nThe baseline added a semicolon to the first matching statement.\n\nPATCHED CODE:\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 4;\n    int b = 7;\n    int total = a + b;\n    cout << \"Total: \" << total << endl;\n    return 0;\n}\n```"
+}

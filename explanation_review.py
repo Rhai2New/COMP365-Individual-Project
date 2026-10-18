@@ -22,8 +22,8 @@ def sections(response: str) -> tuple[str, str]:
     return root.group(1).strip() if root else "", beginner.group(1).strip() if beginner else ""
 
 
-def export(run: Path) -> Path:
-    destination = new_run(run.parent.parent / "explanation_reviews", "worksheet")
+def export(run: Path, output_root: Path | None = None) -> Path:
+    destination = new_run(output_root or run.parent.parent / "explanation_reviews", "worksheet")
     rows = []
     for row in read_records(run):
         if not row["response_received"]:
@@ -99,8 +99,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run", type=Path)
     parser.add_argument("--ratings", type=Path)
+    parser.add_argument("--output-root", type=Path, help="Worksheet root, useful for nested Gemini run shards")
     args = parser.parse_args()
-    print(evaluate(args.run, args.ratings) if args.ratings else export(args.run))
+    print(evaluate(args.run, args.ratings) if args.ratings else export(args.run, args.output_root))
     return 0
 
 

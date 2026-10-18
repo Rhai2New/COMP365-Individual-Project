@@ -1,0 +1,5 @@
+COMPILER ERROR:
+J03.java:7: error: reached end of file while parsing
+}
+ ^
+1 error

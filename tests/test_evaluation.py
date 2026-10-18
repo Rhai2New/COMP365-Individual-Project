@@ -69,6 +69,19 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(3, result['mean_successful_response_seconds'])
         self.assertEqual(1, result['functional_success_rate'])
 
+    def test_common_response_selection_retains_invalid_outputs(self):
+        from compare_available_cases import common_rows
+        rows = [dict(provider=p, case_id=c, response_received=True, status='successful_repair')
+                for p in ('demo', 'llama_cpp', 'gemini') for c in ('J01', 'J02', 'J03')]
+        rows[7].update(response_received=False, status='api_service_error')
+        rows[5].update(status='invalid_response')
+        ids, selected = common_rows(rows)
+        self.assertEqual(['J01', 'J03'], ids)
+        self.assertEqual(6, len(selected))
+        self.assertTrue(any(r['status'] == 'invalid_response' for r in selected))
+        with self.assertRaises(ValueError):
+            common_rows(rows + [rows[0]])
+
     def test_error_classification(self):
         for code, expected in [(429, 'api_quota_failure'), (503, 'api_service_error'),
                                (401, 'api_access_error'), (404, 'api_access_error')]:
@@ -196,6 +209,22 @@ class EvaluationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td, patch.dict('os.environ', {'GEMINI_API_KEY':'test-placeholder'}):
             output = execute([sys.executable, '-c', "import os; print('GEMINI_API_KEY' in os.environ)"], Path(td))
         self.assertEqual('False', output['stdout'].strip())
+
+    def test_explicit_gemini_model_reaches_adapter_and_evidence(self):
+        with tempfile.TemporaryDirectory() as td:
+            args = ['benchmark_runner.py', '--providers', 'gemini', '--case', 'J01',
+                    '--gemini-model', 'explicit-test-model', '--allow-live',
+                    '--gemini-free-tier-confirmed', '--results-root', td]
+            error = ProviderError('api_access_error', 'mock access error', request_made=True)
+            with patch('sys.argv', args), patch('benchmark_runner.preflight', return_value={'available': True}) as check, \
+                 patch('benchmark_runner.generate', side_effect=error) as adapter:
+                self.assertEqual(0, runner.main())
+            check.assert_called_once_with('gemini', 'explicit-test-model')
+            self.assertEqual('explicit-test-model', adapter.call_args.args[1])
+            run = next(Path(td).iterdir())
+            self.assertEqual('explicit-test-model', read_records(run)[0]['model'])
+            config = json.loads((run / 'config.json').read_text())
+            self.assertEqual('explicit-test-model', config['models']['gemini'])
 
     def test_unverified_billing_prevents_generation(self):
         with tempfile.TemporaryDirectory() as td:

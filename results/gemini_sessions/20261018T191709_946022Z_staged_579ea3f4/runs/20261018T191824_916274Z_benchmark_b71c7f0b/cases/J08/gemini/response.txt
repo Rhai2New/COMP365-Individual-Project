@@ -1,0 +1,23 @@
+ROOT CAUSE:
+The strings printed inside the `if` and `else` branches are swapped. When `n % 2 == 0` is true, the number is even, but the code prints `"odd"`.
+
+BEGINNER EXPLANATION:
+The expression `n % 2` calculates the remainder when `n` is divided by `2`. If the remainder is `0` (`n % 2 == 0`), the number divides evenly by 2, which means it is an even number. 
+
+In your current code, the `if` block executes when the number is even, but it displays `"odd"`. Swapping the two print statements so that `"even"` is printed when the condition is true and `"odd"` is printed in the `else` block fixes the problem.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n % 2 == 0) {
+            System.out.println("even");
+        } else {
+            System.out.println("odd");
+        }
+    }
+}
+```

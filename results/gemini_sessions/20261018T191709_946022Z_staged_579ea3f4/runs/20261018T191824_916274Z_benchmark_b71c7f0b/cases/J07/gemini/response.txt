@@ -1,0 +1,22 @@
+ROOT CAUSE:
+The `if` condition checks `b < a` instead of `b > a`, which causes `max` to be updated with the smaller number instead of the larger one.
+
+BEGINNER EXPLANATION:
+When finding the maximum of two numbers, you want to replace your current maximum (`a`) with `b` only if `b` is strictly greater than `a`. In your code, the condition `b < a` checks if `b` is smaller than `a`, so the program ends up printing the minimum value instead of the maximum. Changing `<` to `>` fixes the problem.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int max = a;
+        if (b > a) {
+            max = b;
+        }
+        System.out.println(max);
+    }
+}
+```

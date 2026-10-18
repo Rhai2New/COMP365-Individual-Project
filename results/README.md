@@ -3,9 +3,8 @@
 Current paths: [docs/handoff_sources.json](../docs/handoff_sources.json).
 
 - Primary baseline/Qwen run: `runs/20261018T131412_396245Z_benchmark_41bb2533`.
-- Actual Gemini smoke: `gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b` (one HTTP 400, no response).
-- Remaining Gemini cases: `runs/20261018T165729_486199Z_benchmark_d3df46ae` (19 skipped, no requests). Earlier billing-blocked evidence is historical.
-- Final comparison: `comparisons/20261018T165842_557570Z_final_a1ed1438`.
+- Authenticated Gemini session: `results/gemini_sessions/20261018T191709_946022Z_staged_579ea3f4/session.json`. Exact selected shards are in `docs/handoff_sources.json:gemini_runs`. Earlier access failures remain historical.
+- Final comparison: `comparisons/20261018T192905_212433Z_final_b6a6bbc3`.
 
 | Folder | Meaning |
 |---|---|
@@ -22,3 +21,5 @@ Current paths: [docs/handoff_sources.json](../docs/handoff_sources.json).
 | `historical_checkpoint2_checkout/`, `historical_audits/` | Preserved history and unsupported-claim inventory |
 
 Top-level results and `outputs/` are historical and excluded. Use `summarize_results.py RUN --check` for an experiment and `finalize_results.py --check DIRECTORY` for the comparison. Full commands are in the root README.
+
+- Common delivered J01-J10 comparison: `results/availability_comparisons/20261018T193004_385071Z_common_responses_93aa0a9f`; generated separately from the full scheduled-case table.

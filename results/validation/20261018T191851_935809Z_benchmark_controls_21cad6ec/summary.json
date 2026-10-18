@@ -1,0 +1,228 @@
+{
+  "passed": true,
+  "cases": 20,
+  "visible_tests": 36,
+  "hidden_tests": 58,
+  "rows": [
+    {
+      "case_id": "J01",
+      "category": "syntax",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": false,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 1,
+      "hidden_tests": 2
+    },
+    {
+      "case_id": "J02",
+      "category": "syntax",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": false,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 1,
+      "hidden_tests": 2
+    },
+    {
+      "case_id": "J03",
+      "category": "syntax",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": false,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 1,
+      "hidden_tests": 2
+    },
+    {
+      "case_id": "J04",
+      "category": "syntax",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": false,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 1,
+      "hidden_tests": 2
+    },
+    {
+      "case_id": "J05",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J06",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J07",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J08",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J09",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J10",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 4
+    },
+    {
+      "case_id": "J11",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 3,
+      "hidden_tests": 4
+    },
+    {
+      "case_id": "J12",
+      "category": "runtime",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 1,
+      "hidden_tests": 2
+    },
+    {
+      "case_id": "J13",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J14",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J15",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J16",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J17",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J18",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J19",
+      "category": "logic",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 3
+    },
+    {
+      "case_id": "J20",
+      "category": "runtime",
+      "classification_verified": true,
+      "oracle_verified": true,
+      "original_compiles": true,
+      "original_functional_success": false,
+      "authored_control_success": true,
+      "visible_tests": 2,
+      "hidden_tests": 4
+    }
+  ]
+}

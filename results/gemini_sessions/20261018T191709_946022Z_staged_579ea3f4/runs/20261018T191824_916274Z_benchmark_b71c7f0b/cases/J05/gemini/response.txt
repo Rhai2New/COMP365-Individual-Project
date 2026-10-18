@@ -1,0 +1,18 @@
+ROOT CAUSE:
+The program subtracts `b` from `a` using the `-` operator instead of adding them together with the `+` operator.
+
+BEGINNER EXPLANATION:
+The test cases expect the sum of the two input numbers (for example, 7 + 5 = 12). In your code, `System.out.println(a - b);` calculates the difference between `a` and `b` instead of their sum. Changing the `-` operator to `+` fixes the issue.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J05 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(a + b);
+    }
+}
+```

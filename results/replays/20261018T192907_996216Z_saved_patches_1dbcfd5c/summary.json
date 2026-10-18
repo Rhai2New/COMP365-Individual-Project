@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "patches_replayed": 9,
+  "checks": [
+    {
+      "case_id": "J02",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J03",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J04",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J05",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J06",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J07",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J08",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J09",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    },
+    {
+      "case_id": "J10",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    }
+  ]
+}

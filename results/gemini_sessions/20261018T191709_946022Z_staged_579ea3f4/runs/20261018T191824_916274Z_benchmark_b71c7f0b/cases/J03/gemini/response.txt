@@ -1,0 +1,17 @@
+ROOT CAUSE:
+The code opens three code blocks with `{` (for the class, the `main` method, and the `if` statement) but only contains two closing braces `}`, leaving the class unclosed at the end of the file.
+
+BEGINNER EXPLANATION:
+In Java, every opening curly brace `{` must have a matching closing curly brace `}`. In your code, you opened braces for `class J03`, `main`, and `if (x > 0)`, but you only wrote two closing braces. Adding the missing `}` to properly close the `if` statement, method, and class resolves the compiler error.
+
+PATCHED CODE:
+```java
+public class J03 {
+    public static void main(String[] args) {
+        int x = 3;
+        if (x > 0) {
+            System.out.println("positive");
+        }
+    }
+}
+```

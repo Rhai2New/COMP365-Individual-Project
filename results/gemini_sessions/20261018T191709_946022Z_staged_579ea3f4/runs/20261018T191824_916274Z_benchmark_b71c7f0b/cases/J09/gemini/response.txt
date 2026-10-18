@@ -1,0 +1,21 @@
+ROOT CAUSE:
+The expression `(a + b) / 2` uses integer division because both `(a + b)` and `2` are integers. This truncates the decimal part before assigning the result to the `double` variable `average`.
+
+BEGINNER EXPLANATION:
+When you divide two whole numbers (`int`) in Java, Java throws away any decimal remainder. For example, `7 / 2` becomes `3` instead of `3.5`. Even though `average` is declared as a `double`, the division finishes as an integer first, and only then gets converted to `3.0`. 
+
+To fix this, divide by `2.0` instead of `2`. Because `2.0` is a floating-point number, Java will perform floating-point division and preserve the decimal part.
+
+PATCHED CODE:
+```java
+import java.util.Scanner;
+public class J09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        double average = (a + b) / 2.0;
+        System.out.println(average);
+    }
+}
+```

@@ -1,0 +1,15 @@
+ROOT CAUSE:
+The statement is missing its terminating semicolon.
+
+BEGINNER EXPLANATION:
+Java statements such as this one normally end with a semicolon.
+
+PATCHED CODE:
+```java
+public class BuggyGreeting {
+    public static void main(String[] args) {
+        String name = "Aggie";
+        System.out.println("Hello, " + name);
+    }
+}
+```

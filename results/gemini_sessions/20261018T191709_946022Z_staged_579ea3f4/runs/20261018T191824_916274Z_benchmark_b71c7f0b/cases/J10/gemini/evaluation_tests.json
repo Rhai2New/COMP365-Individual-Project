@@ -1,0 +1,38 @@
+[
+  {
+    "input": "yes\n",
+    "expected": "accepted",
+    "split": "visible",
+    "test_id": "visible_1"
+  },
+  {
+    "input": "no\n",
+    "expected": "rejected",
+    "split": "visible",
+    "test_id": "visible_2"
+  },
+  {
+    "input": "YES\n",
+    "expected": "rejected",
+    "split": "hidden",
+    "test_id": "hidden_1"
+  },
+  {
+    "input": "yes \n",
+    "expected": "rejected",
+    "split": "hidden",
+    "test_id": "hidden_2"
+  },
+  {
+    "input": "yes\nignored\n",
+    "expected": "accepted",
+    "split": "hidden",
+    "test_id": "hidden_3"
+  },
+  {
+    "input": "\n",
+    "expected": "rejected",
+    "split": "hidden",
+    "test_id": "hidden_4"
+  }
+]

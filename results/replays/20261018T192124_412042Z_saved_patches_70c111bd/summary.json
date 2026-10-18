@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "patches_replayed": 1,
+  "checks": [
+    {
+      "case_id": "J01",
+      "provider": "gemini",
+      "matches_saved_outcomes": true
+    }
+  ]
+}

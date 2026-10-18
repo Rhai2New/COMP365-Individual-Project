@@ -1,0 +1,5 @@
+{
+  "status": "skipped_after_api_error",
+  "message": "Circuit breaker: stopped provider after api_service_error",
+  "request_made": false
+}

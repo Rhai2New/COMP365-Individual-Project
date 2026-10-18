@@ -14,9 +14,11 @@ This is an operating checklist, not a narration script. Speak in your own voice.
 - [ ] J05 / baseline: unchanged patch compiles but fails functional tests. If you personally change `a - b` to `a + b` and retest, identify your edit as excluded from model benchmark results.
 - [ ] J12 or J20 / saved Qwen: runtime bug, exact response, replay label, recorded generation time, held-out results. Retest for a fresh local execution check.
 - [ ] Open the displayed evidence directory: source, response/envelope, patch/diff, compiler output, tests, and CSV/JSON. Distinguish original experiments from UI reviews.
-- [ ] Open `results/comparisons/20261018T165842_557570Z_final_a1ed1438/tables.md` and `figure_ready_data.csv`. Show baseline 1/20 and Qwen 9/20 functional per response; Gemini unevaluated. Distinguish Qwen's 13/13 extracted-patch compile rate from 13/20 delivered responses.
+- [ ] Open `results/comparisons/20261018T192905_212433Z_final_b6a6bbc3/tables.md` and `figure_ready_data.csv`. Show baseline 1/20 and Qwen 9/20 functional per response; Gemini 10/10 delivered responses pass all tests. Distinguish Qwen's 13/13 extracted-patch compile rate from 13/20 delivered responses.
+- [ ] Show the common J01-J10 comparison: baseline 1/10, Qwen 5/10, Gemini 10/10. Explain that it contains no runtime cases and is conditional on available responses.
+- [ ] Show J11 HTTP 503 (31.546709000 s) and J12-J20 skipped records. Missing service results are not model repair failures.
 - [ ] Show syntax/logic/runtime results and seven invalid Qwen responses. Patch success does not establish explanation accuracy.
-- [ ] Show the actual J01 HTTP 400 error and 2.081643800 s failed-request timing, plus J02-J20 skipped records. Free Tier was personally verified by the student, but no model response or repair score exists. Never display the key.
+- [ ] Show the authenticated Gemini J01 response/patch/tests, session record, served model identity, remaining cases, and actual timing. Show any recorded quota/service error separately from model repair results. Use saved evidence; no new cloud call is needed. Keep `.env` off-screen.
 - [ ] Show the blank human worksheet and separate preliminary AI ratings. Report only human judgments you personally completed.
 
 ## Commands worth showing
@@ -25,7 +27,7 @@ This is an operating checklist, not a narration script. Speak in your own voice.
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe validate_benchmarks.py
 .\.venv\Scripts\python.exe summarize_results.py results\runs\20261018T131412_396245Z_benchmark_41bb2533 --check
-.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T165842_557570Z_final_a1ed1438
+.\.venv\Scripts\python.exe finalize_results.py --check results\comparisons\20261018T192905_212433Z_final_b6a6bbc3
 ```
 
 - [ ] Show `submission/LATEST_SUBMISSION.json`, its verification sidecar, and the local review branch. Do not push without approval.

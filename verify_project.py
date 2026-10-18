@@ -109,6 +109,10 @@ def main() -> int:
     for comparison in sorted((ROOT / 'results' / 'comparisons').iterdir()):
         verify_comparison(comparison)
         checks.append({'check': 'complete comparison reproduction: ' + comparison.name, 'passed': True})
+    from compare_available_cases import verify as verify_available
+    for comparison in sorted((ROOT / 'results' / 'availability_comparisons').glob('*')):
+        verify_available(comparison)
+        checks.append({'check': 'common-response comparison reproduction: ' + comparison.name, 'passed': True})
     seals_checked = 0
     for manifest in (ROOT / 'results').rglob('artifact_sha256.json'):
         folder = manifest.parent

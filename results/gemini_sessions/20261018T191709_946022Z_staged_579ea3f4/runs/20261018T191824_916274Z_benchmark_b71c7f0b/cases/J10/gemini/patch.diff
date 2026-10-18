@@ -1,0 +1,11 @@
+--- a/J10.java
++++ b/J10.java
+@@ -3,7 +3,7 @@
+     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         String answer = sc.nextLine();
+-        if (answer == "yes") {
++        if (answer.equals("yes")) {
+             System.out.println("accepted");
+         } else {
+             System.out.println("rejected");

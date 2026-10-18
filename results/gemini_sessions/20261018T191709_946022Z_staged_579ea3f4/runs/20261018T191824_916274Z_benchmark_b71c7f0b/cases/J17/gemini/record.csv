@@ -1,0 +1,2 @@
+run_id,case_id,source,language,bug_type,category,provider,model,resolved_model,status,request_made,response_received,repair_attempted,patch_changed_source,patch_compile_success,visible_test_success,hidden_test_success,test_success,response_seconds,error,artifact_dir
+20261018T191824_916274Z_benchmark_b71c7f0b,J17,J17.java,java,logic:boundary_condition,logic,gemini,gemini-3.8-flash,,skipped_after_api_error,False,False,False,,,,,,,Circuit breaker: stopped provider after api_service_error,cases/J17/gemini
