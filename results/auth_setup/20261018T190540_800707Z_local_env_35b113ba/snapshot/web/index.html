@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code Bug Explainer | COMP 365</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main>
+<header><p class="eyebrow">COMP 365 / LOCAL REVIEW</p><h1>Understand the bug. Review the repair.</h1>
+<p>Explore a Java case, inspect the explanation, then edit and retest the proposed patch.</p></header>
+<section class="controls" aria-label="Case and system"><label>Benchmark case<select id="case"></select></label>
+<label>Explanation system<select id="provider"><option value="demo">Rule baseline / fresh local generation</option>
+<option value="saved_qwen">Qwen2.5-Coder / saved response replay</option><option value="llama_cpp">Qwen2.5-Coder / live local server</option></select></label>
+<button id="explain">Explain and propose patch</button></section>
+<p class="note">Saved replay shows the exact recorded response and original timing. Live Qwen requires the local server. Gemini J01 returned HTTP 400 with no response; J02-J20 were skipped. Free Tier was confirmed by the student; local .env authentication is ready for one-time private key entry.</p>
+<p id="status" role="status" aria-live="polite">Loading cases...</p>
+<section class="columns"><div><h2>Original source</h2><pre id="original" tabindex="0"></pre></div>
+<div><h2><label for="patch">Proposed patch / editable</label></h2><textarea id="patch" spellcheck="false" aria-label="Review and edit the Java patch"></textarea></div></section>
+<button id="retest" disabled>Approve current patch and retest</button><p class="note">Retesting compiles and runs this patch against visible and held-out tests. It saves a separate review record; benchmark sources and experimental results stay intact. Run only code you trust on this local prototype.</p>
+<section><h2>Explanation and exact response</h2><pre id="response">Choose a case and request an explanation.</pre></section>
+<section><h2>Changes</h2><pre id="diff">No patch yet.</pre></section>
+<section><h2>Compilation and behavior</h2><p id="outcome">Not evaluated.</p><pre id="details"></pre></section>
+<footer>Teaching prototype · 20 Java cases · 36 visible + 58 held-out tests · Test passes do not prove general correctness.</footer>
+</main></body></html>

@@ -1,7 +1,7 @@
 {
   "primary_run": "results/runs/20261018T131412_396245Z_benchmark_41bb2533",
   "control_validation": "results/validation/20261018T165844_248071Z_benchmark_controls_7705bc78/summary.json",
-  "verification": "results/verification/20261018T170001_525042Z_final_checks_dd08a55d/verification.json",
+  "verification": "results/verification/20261018T190459_681092Z_final_checks_5a692d7a/verification.json",
   "explanation_ratings": "results/explanation_reviews/20261018T132222_582045Z_scored_f320519e/summary.json",
   "historical_audit": "results/historical_audits/20261018T131533_028957Z_csv_inventory_cfdd9606/summary.json",
   "gemini_run": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/runs/20261018T165537_647234Z_benchmark_d0b0ae7b",
@@ -19,5 +19,6 @@
   "gemini_session": "results/gemini_sessions/20261018T165537_356590Z_staged_5cca6e5c/session.json",
   "gemini_diagnostics": "results/api_preflight/20261018T165611_492589Z_gemini_local_diagnostics_d5c6ce26/diagnostics.json",
   "free_tier_authorization": "audit\\20261018T165842_192283Z_free_tier_followup_370e50f0\\authorization.json",
-  "previous_gemini_run": "results/runs/20261018T153859_032470Z_benchmark_60bcc2f4"
+  "previous_gemini_run": "results/runs/20261018T153859_032470Z_benchmark_60bcc2f4",
+  "local_auth_setup": "results/auth_setup/20261018T190540_800707Z_local_env_35b113ba/verification.json"
 }

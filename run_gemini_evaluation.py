@@ -24,7 +24,7 @@ def main() -> int:
     if not args.free_tier_confirmed:
         parser.error('Verify the saved key project is Free Tier with billing disabled before running')
     if not load_saved_gemini_key():
-        parser.error('No saved Gemini credential found')
+        parser.error('No usable Gemini credential loaded; local .env may still be empty. No request made.')
     session = new_run(ROOT / 'results' / 'gemini_sessions', 'staged')
     runs = session / 'runs'
     command = [sys.executable, str(ROOT / 'benchmark_runner.py'), '--providers', 'gemini',

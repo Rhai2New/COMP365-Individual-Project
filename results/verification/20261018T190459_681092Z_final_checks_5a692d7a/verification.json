@@ -1,0 +1,108 @@
+{
+  "finished_utc": "2026-10-18T19:05:51.806097+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "check": "current Python syntax",
+      "passed": true
+    },
+    {
+      "check": "regression tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "web JavaScript syntax",
+      "passed": true
+    },
+    {
+      "check": "records, CSVs, summaries, and hashes: 20261018T165537_647234Z_benchmark_d0b0ae7b",
+      "passed": true
+    },
+    {
+      "check": "visible-only prompt reconstruction: 20261018T165537_647234Z_benchmark_d0b0ae7b",
+      "passed": true
+    },
+    {
+      "check": "records, CSVs, summaries, and hashes: 20261018T130812_682441Z_benchmark_2452b724",
+      "passed": true
+    },
+    {
+      "check": "visible-only prompt reconstruction: 20261018T130812_682441Z_benchmark_2452b724",
+      "passed": true
+    },
+    {
+      "check": "records, CSVs, summaries, and hashes: 20261018T131412_396245Z_benchmark_41bb2533",
+      "passed": true
+    },
+    {
+      "check": "visible-only prompt reconstruction: 20261018T131412_396245Z_benchmark_41bb2533",
+      "passed": true
+    },
+    {
+      "check": "records, CSVs, summaries, and hashes: 20261018T153859_032470Z_benchmark_60bcc2f4",
+      "passed": true
+    },
+    {
+      "check": "visible-only prompt reconstruction: 20261018T153859_032470Z_benchmark_60bcc2f4",
+      "passed": true
+    },
+    {
+      "check": "records, CSVs, summaries, and hashes: 20261018T165729_486199Z_benchmark_d3df46ae",
+      "passed": true
+    },
+    {
+      "check": "visible-only prompt reconstruction: 20261018T165729_486199Z_benchmark_d3df46ae",
+      "passed": true
+    },
+    {
+      "check": "original results, benchmarks, and samples preserved",
+      "passed": true,
+      "files_checked": 39,
+      "mismatches": []
+    },
+    {
+      "check": "rule baseline function AST preserved",
+      "passed": true
+    },
+    {
+      "check": "copied historical evidence matches provenance",
+      "passed": true,
+      "files_checked": 67,
+      "mismatches": []
+    },
+    {
+      "check": "credential pattern scan",
+      "passed": true,
+      "text_files_scanned": 3122,
+      "findings_without_secret_values": [],
+      "scope": "Deliverable text, evidence, and audit backups; excludes local .env secrets, .venv/.tools/binary images"
+    },
+    {
+      "check": "20 category labels, 94 test expectations, authored controls",
+      "passed": true,
+      "cases": 20,
+      "visible_tests": 36,
+      "hidden_tests": 58
+    },
+    {
+      "check": "complete comparison reproduction: 20261018T154343_232420Z_final_328a03d4",
+      "passed": true
+    },
+    {
+      "check": "complete comparison reproduction: 20261018T165842_557570Z_final_a1ed1438",
+      "passed": true
+    },
+    {
+      "check": "all sealed experiment/control/replay/review artifacts",
+      "passed": true,
+      "seals": 21
+    }
+  ],
+  "not_claimed": [
+    "Live Gemini access",
+    "Live OpenAI access",
+    "Human explanation ratings",
+    "Paper/video completion"
+  ]
+}

@@ -11,20 +11,71 @@ import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
+from pathlib import Path
 from urllib.parse import urlparse
 
 PROVIDERS = ("demo", "gemini", "openai", "ollama", "llama_cpp")
 DEFAULT_MODELS = {"demo": "local-rule-baseline-v1", "gemini": "gemini-3.8-flash"}
 LOCAL_MODEL = "Qwen2.5-Coder-0.5B-Instruct-Q4_K_M"
+LOCAL_ENV_PATH = Path(__file__).resolve().parent / '.env'
+
+
+def local_gemini_credential() -> tuple[bool, str, str | None]:
+    """Read only GEMINI_API_KEY, without interpolation or executing file content.
+
+    An existing local file is authoritative, including an empty value. This
+    prevents stale process/Windows credentials from silently replacing it.
+    Errors describe the configuration, never its contents.
+    """
+    if not LOCAL_ENV_PATH.exists():
+        return False, '', None
+    try:
+        lines = LOCAL_ENV_PATH.read_text(encoding='utf-8-sig').splitlines()
+    except (OSError, UnicodeError):
+        return True, '', 'Cannot read the local .env file as UTF-8; no request made.'
+    found = False
+    value = ''
+    for line in lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith('#'):
+            continue
+        if stripped.startswith('export '):
+            stripped = stripped[7:].lstrip()
+        name, separator, raw = stripped.partition('=')
+        if name.strip() != 'GEMINI_API_KEY':
+            continue
+        if found or not separator:
+            return True, '', 'Use one GEMINI_API_KEY assignment in .env; no request made.'
+        found = True
+        value = raw.strip()
+        if value.startswith(('"', "'")):
+            quote = value[0]
+            end = value.find(quote, 1)
+            if end < 0 or (value[end + 1:].strip() and not value[end + 1:].lstrip().startswith('#')):
+                return True, '', 'Invalid quoted GEMINI_API_KEY assignment in .env; no request made.'
+            value = value[1:end]
+        else:
+            value = re.split(r'\s+#', value, maxsplit=1)[0].rstrip()
+    if not found or not value:
+        return True, '', 'Local .env GEMINI_API_KEY is empty; no request made.'
+    if value.upper() in {'YOUR_GEMINI_API_KEY_HERE', 'YOUR_API_KEY_HERE', 'YOUR_LOCAL_KEY'}:
+        return True, '', 'Local .env contains a template placeholder; no request made.'
+    return True, value, None
 
 
 def load_saved_gemini_key() -> bool:
-    """Read only the named Windows user variables; never print or persist keys.
+    """Load project .env first, then process/Windows variables if no file exists.
 
     Registry values may be newer than the environment inherited by this process.
     Installing the value in the process also enables error redaction. Evaluated
     compiler/program subprocesses remove credential variables.
     """
+    present, value, error = local_gemini_credential()
+    if present:
+        # Process-only export supplies SDK authentication and error redaction.
+        # Neither this function nor SDK configuration writes the key to disk.
+        os.environ['GEMINI_API_KEY'] = value
+        return bool(value) and error is None
     if os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"):
         return True
     if os.name == "nt":
@@ -101,7 +152,10 @@ def preflight(provider: str, model: str | None) -> dict:
         return {"available": model == DEFAULT_MODELS["demo"], "reason": "Built-in rule baseline"}
     if provider in {"gemini", "openai"}:
         if provider == "gemini":
-            load_saved_gemini_key()
+            loaded = load_saved_gemini_key()
+            present, _, local_error = local_gemini_credential()
+            if not loaded and present:
+                return {'available': False, 'reason': local_error or 'Local Gemini credential unavailable; no request made.'}
         key = "GEMINI_API_KEY" if provider == "gemini" else "OPENAI_API_KEY"
         module = "google.genai" if provider == "gemini" else "openai"
         if not os.getenv(key) and not (provider == "gemini" and os.getenv("GOOGLE_API_KEY")):

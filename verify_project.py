@@ -86,6 +86,8 @@ def main() -> int:
             continue
         if path.suffix.lower() in {".png", ".zip", ".class", ".exe", ".pyc"}:
             continue
+        if path.name == '.env' or (path.name.startswith('.env.') and path.name != '.env.example'):
+            continue
         try:
             content = path.read_text(encoding="utf-8-sig")
         except UnicodeError:
@@ -98,7 +100,7 @@ def main() -> int:
                 findings.append({"path": path.relative_to(ROOT).as_posix(), "pattern": name})
     checks.append({"check": "credential pattern scan", "passed": not findings, "text_files_scanned": scanned,
                    "findings_without_secret_values": findings,
-                   "scope": "Project text, evidence, and audit backups; excludes .venv/.tools/binary images"})
+                   "scope": "Deliverable text, evidence, and audit backups; excludes local .env secrets, .venv/.tools/binary images"})
     control_runs = sorted((ROOT / "results" / "validation").glob("*/summary.json"))
     control = json.loads(control_runs[-1].read_text(encoding="utf-8"))
     checks.append({"check": "20 category labels, 94 test expectations, authored controls", "passed": control["passed"],

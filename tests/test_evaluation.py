@@ -17,6 +17,14 @@ from validate_benchmarks import oracle, reference_source
 
 
 class EvaluationTests(unittest.TestCase):
+    def setUp(self):
+        # Contract tests must not read the developer's local authentication file.
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        env_path = patch('repair_providers.LOCAL_ENV_PATH', Path(directory.name) / '.env')
+        env_path.start()
+        self.addCleanup(env_path.stop)
+
     @classmethod
     def setUpClass(cls):
         cls.cases, cls.hidden = runner.load_cases()

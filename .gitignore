@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .idea/
+# Local authentication stays on this machine; only the example is versioned.
 .env
 .env.*
 !.env.example

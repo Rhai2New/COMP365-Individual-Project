@@ -22,7 +22,8 @@ Sources: the user's October 18 requirements, checkpoint evidence, the [student p
 | Regression, syntax, reproducibility | Passed | Verification logs; comparison regeneration; patch/envelope/diff/split-result checks |
 | Safe Git preparation | Separate branch/worktree | Sibling dirty files preserved; inspect local commits before approving push |
 | Technical package | Sidecar is authority | `submission/LATEST_SUBMISSION.json`: extraction hashes, regression tests, 20 controls, summary/table reproduction |
-| Credentials / model binaries | Scanned / excluded | Pattern and exact-environment-secret scans; cache/binary exclusions |
+| Credentials / model binaries | Scanned / excluded | .env and backups excluded from Git/ZIP/snapshots; placeholder-only example; pattern and exact-secret scans on deliverables; cache/binary exclusions |
+| Persistent local authentication | Complete | Automatic project .env loading, precedence over stale Windows values, blank-field no-network guard, six dedicated regression tests; local file created empty as requested |
 | Paper, Overleaf, video, Canvas | Student-owned | No paper writing, upload, conference submission, push, or merge performed |
 
 Limits: one generation per case, small curated suite, no participant study or statistical significance, exact-output tests on a limited domain, and five programs whose ignored-input hidden checks add little behavioral coverage. Tests and technical controls were AI-assisted; an independent human test-suite review is not claimed. See `EVALUATION_METHODOLOGY.md`.

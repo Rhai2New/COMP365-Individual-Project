@@ -1,0 +1,18 @@
+{
+  "local_file_present": true,
+  "key_field_populated": false,
+  "empty_local_value_blocks_stale_credentials": true,
+  "local_file_has_precedence": true,
+  "git_ignored_paths": [
+    ".env",
+    ".env.backup",
+    ".env.local"
+  ],
+  "git_has_no_tracked_private_env_files": true,
+  "submission_inputs_exclude_private_env_files": true,
+  "snapshots_exclude_private_env_files": true,
+  "example_is_deliverable": true,
+  "network_requests_made": 0,
+  "credentials_logged": false,
+  "passed": true
+}
